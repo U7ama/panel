@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="264" height="131" viewBox="0 0 264 131">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="264" height="131" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Ge.F.A._logo" data-name="Ge.F.A. logo" clip-path="url(#clip-path)">
+    <text id="Ge.F.A" transform="translate(0 100)" fill="#fff" font-size="93" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Ge.F.A</tspan></text>
+    <text id="Gestione_Finanza_Agevolata" data-name="Gestione Finanza Agevolata" transform="translate(13 126)" fill="#fff" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0" letter-spacing="0.07em">Gestione Finanza Agevolat</tspan><tspan y="0">a</tspan></text>
+  </g>
+</svg>

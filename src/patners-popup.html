@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="font-nunito text-[15px]">
+  <div class="">
+    <aside class="w-[140px] fixed top-0 left-0 bottom-0 bg-dark shrink-0">
+      <a href="dashboard.html" class="flex flex-col justify-center items-center pt-12">
+        <h3 class="text-[30px] leading-none font-semibold text-center text-white">
+          Ge.F.A
+        </h3>
+        <p class="text-[7px] text-white">Gestione Finanza Agevolata</p>
+      </a>
+      <div class="mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
+        <ul class="grid gap-12">
+          <li>
+            <a href="users.html">
+              <img class="size-[32px]" src="./images/user.svg" alt="user" />
+            </a>
+          </li>
+          <li>
+            <a href="announcements.html">
+              <img class="size-[32px]" src="./images/time-left.svg" alt="time-left" />
+            </a>
+          </li>
+          <li>
+            <a href="application.html">
+              <img class="size-[32px]" src="./images/check.svg" alt="check" />
+            </a>
+          </li>
+          <li>
+            <a href="delivery.html">
+              <img class="size-[32px]" src="./images/euro.svg" alt="euro" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="size-[32px]" src="./images/fingerprint.svg" alt="fingerprint" />
+            </a>
+          </li>
+          <li>
+            <a href="patners.html">
+              <img class="size-[32px]" src="./images/users.svg" alt="users" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="size-[32px]" src="./images/automatic-doors.svg" alt="automatic-doors" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="ml-[140px]">
+      <header class="bg-primary py-4 pl-28">
+        <div class="max-w-[1340px] flex justify-between items-center">
+          <h2 class="text-[60px] font-semibold text-white">Partners</h2>
+          <div class="flex items-center gap-32">
+            <p class="text-white text-[15px]">
+              Lun. 09 Gennaio 2023 | ora: 18,30
+            </p>
+            <div class="flex gap-8 items-center">
+              <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p>
+              <button type="button">
+                <img src="./images/logout.svg" alt="logout.svg" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="min-h-[calc(100vh-125px)] max-h-[calc(100vh-125px)] overflow-y-auto flex pt-14 2xl:pt-16 pb-10">
+        <div class="max-w-full w-[1226px] mx-auto space-y-12">
+          <div class="flex justify-end">
+            <button type="button" class="text-[15px] px-4 py-2 rounded-md bg-dark text-white font-medium">
+              +AGGIUNGI
+            </button>
+          </div>
+          <div class="grid grid-cols-4 justify-between gap-14">
+            <div class="relative">
+              <input type="text"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
+                placeholder="DATA" />
+              <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
+            </div>
+            <div class="relative">
+              <input type="text"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
+                placeholder="UTENTE/PRATICA" />
+              <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
+            </div>
+            <div class="relative">
+              <input type="text"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
+                placeholder="STATO PRATICA" />
+              <div class="absolute top-1/2 -translate-y-1/2 right-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="stroke-brand-gray-700/80">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="relative flex justify-end">
+              <button id="openModal" type="button"
+                class="px-8 py-2 font-medium rounded-lg text-white bg-primary hover:bg-opacity-80 transition-all">
+                APPLICA
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <table class="w-full text-[15px]">
+              <thead>
+                <tr>
+                  <th class="text-left w-80 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    PARTNER
+                  </th>
+                  <th class="text-left first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    ULTIMO AGGIORNAMENTO
+                  </th>
+                  <th class="text-left w-64 first:pl-6 pl-2 text-[15px] text-dark">
+                    STATO
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    STUDIO BOCCIA
+                  </td>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    01/01/2023
+                  </td>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    <div class="flex gap-2 items-center">
+                      <div class="size-4 rounded-full bg-brand-green shrink-0"></div>
+                      <p class="text-black">ATTIVO</p>
+                    </div>
+                  </td>
+
+                  <td
+                    class="p-2.5 text-right first:pl-6 border-y border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    <button type="button" class="w-[116px] text-center text-white bg-brand-green py-1.5 rounded-lg">
+                      GUARDA
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="flex justify-between items-center">
+            <button type="button"
+              class="flex bg-brand-gray-50 text-primary border border-primary items-center px-3 py-2 rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="rotate-180">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              <span>INDIETRO</span>
+            </button>
+            <ul class="flex gap-1.5 items-center">
+              <li class="group active">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">1
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">2
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">3
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">4
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">5
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">6
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">7
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">8
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">9
+                </a>
+              </li>
+            </ul>
+            <button type="button"
+              class="flex bg-primary hover:bg-opacity-80 text-white border border-primary items-center px-3 py-2 rounded-md">
+              <span>AVANTI</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--======================start coding for modal popup ====================================-->
+
+  <div id="modalPopup" style="display: none;" class="fixed inset-0 z-50 w-full h-full bg-black/40 overflow-y-auto py-4">
+    <div class="max-w-[738px] mx-auto bg-white rounded-lg border border-brand-gray-700 mt-8 2xl:mt-14">
+      <div class="w-full relative h-full p-8 2xl:p-14 space-y-6">
+        <button id="closeModal" type="button" class="text-[36px] text-dark/80 absolute top-5 right-8 2xl:right-14">
+          x
+        </button>
+        <h2 class="text-[36px] leading-none font-bold text-black">
+          Aggiungi Partner
+        </h2>
+        <form action="" class="space-y-3 2xl:space-y-6">
+          <div class="grid grid-cols-2 gap-2.5 2xl:gap-4">
+            <div class="relative space-y-1">
+              <label for="Denominazione" class="block text-[15px] text-dark pl-3">Denominazione</label>
+              <input type="text" id="Denominazione"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="Rag. Sociale" class="block text-[15px] text-dark pl-3">Rag. Sociale</label>
+              <input type="text" id="Rag. Sociale"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="Indirizzo" class="block text-[15px] text-dark pl-3">Indirizzo</label>
+              <input type="text" id="Indirizzo"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="P.IVA" class="block text-[15px] text-dark pl-3">P.IVA</label>
+              <input type="text" id="P.IVA"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="EMAIl" class="block text-[15px] text-dark pl-3">EMAIl</label>
+              <input type="text" id="EMAIl"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="PEC" class="block text-[15px] text-dark pl-3">PEC</label>
+              <input type="text" id="PEC"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="Telefono" class="block text-[15px] text-dark pl-3">Telefono</label>
+              <input type="text" id="Telefono"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="Cellulare" class="block text-[15px] text-dark pl-3">Cellulare</label>
+              <input type="text" id="Cellulare"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1 col-span-2">
+              <label for="Referente:" class="block text-[15px] text-dark pl-3">Referente:</label>
+              <input type="text" id="Referente:"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="col-span-2 pt-6">
+              <p class="text-[15px] text-black">
+                Scegli credenziali di accesso
+              </p>
+            </div>
+            <div class="relative space-y-1 -mt-3">
+              <label for="User" class="block text-[15px] text-dark pl-3">User:</label>
+              <input type="text" id="User"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1 -mt-3">
+              <label for="Password" class="block text-[15px] text-dark pl-3">Password:</label>
+              <input type="text" id="Password"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div id="saveAndUpdate" class="col-span-2 pt-4">
+              <button type="button" class="w-full py-1.5 px-3 rounded-md bg-dark text-white">
+                GUARDA PRATICA
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('modalPopup');
+      var openBtn = document.getElementById('openModal');
+      var closeBtn = document.getElementById('closeModal');
+
+      openBtn.addEventListener('click', function () {
+        modal.style.display = 'block';
+      });
+
+      closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const saveAndUpdateButton = document.getElementById('saveAndUpdate');
+
+      saveAndUpdateButton.addEventListener('click', function () {
+        // Capture form data
+        const denomination = document.getElementById('Denominazione').value;
+        // Assumed additional fields... adapt as necessary
+        const corporateName = document.getElementById('Rag. Sociale').value;
+        const address = document.getElementById('Indirizzo').value;
+        const vatNumber = document.getElementById('P.IVA').value;
+        const email = document.getElementById('EMAIl').value;
+        const pec = document.getElementById('PEC').value;
+        const phone = document.getElementById('Telefono').value;
+        const mobile = document.getElementById('Cellulare').value;
+        const contactPerson = document.getElementById('Referente:').value; // Check for ID correctness
+
+        var tableBody = document.querySelector('.w-full tbody');
+        var newRow = tableBody.insertRow();
+
+        newRow.innerHTML = `
+              <td class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                  ${denomination}
+              </td>
+              <td class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                  ${new Date().toLocaleDateString()} <!-- Assuming last update is today -->
+              </td>
+              <td class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                  <div class="flex gap-2 items-center">
+                      <div class="size-4 rounded-full bg-brand-green shrink-0"></div>
+                      <p class="text-black">${pec}</p> <!-- Assuming status is active -->
+                  </div>
+              </td>
+              <td class="p-2.5 text-right first:pl-6 border-y border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                  <button type="button" class="w-[116px] text-center text-white bg-brand-green py-1.5 rounded-lg">
+                      ${contactPerson}
+                  </button>
+              </td>
+          `;
+
+        // Close the modal and clear the form
+        document.getElementById('modalPopup').style.display = 'none';
+        // Clear form fields
+        document.getElementById('Denominazione').value = '';
+        document.getElementById('Rag. Sociale').value = '';
+        document.getElementById('Indirizzo').value = '';
+        document.getElementById('P.IVA').value = '';
+        document.getElementById('EMAIl').value = '';
+        document.getElementById('PEC').value = '';
+        document.getElementById('Telefono').value = '';
+        document.getElementById('Cellulare').value = '';
+        document.getElementById('Referente:').value = '';
+        // Add clearing for User and Password if captured
+      });
+    });
+  </script>
+
+
+  <script src="./js/custom.js"></script>
+</body>
+
+</html>

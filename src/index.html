@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-nunito text-[15px]">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+      <div class="bg-dark h-screen relative flex justify-center items-center">
+        <figure class="-mt-10">
+          <img src="./images/logo.svg" alt="logo.svg" />
+        </figure>
+        <div
+          class="flex justify-between items-center bottom-12 absolute w-full mx-auto px-10 max-w-[737px]"
+        >
+          <p class="text-sm text-white">FINANCIAL BUSINESS - P.IVA:</p>
+          <p class="text-sm text-white">
+            Copyright Financial Business - Tutti i diritti riservati
+          </p>
+        </div>
+      </div>
+      <div class="h-screen flex justify-center items-center">
+        <div class="space-y-20 w-[536px] max-w-full">
+          <h2 class="text-[60px] leading-none text-primary">Login</h2>
+          <form action="" class="space-y-20">
+            <div class="space-y-4">
+              <label
+                for="user_id"
+                class="text-[15px] text-black pl-3 flex gap-4 items-center"
+              >
+                <img src="./images/face-scan.svg" alt="face-scan.svg" />
+                <span>User ID</span>
+              </label>
+              <input
+                type="text"
+                name="user_id"
+                id="user_id"
+                class="focus:outline-none px-4 w-full py-3 rounded-2xl border border-brand-gray-700 bg-brand-gray-100 focus:ring-0"
+              />
+            </div>
+            <div class="space-y-4">
+              <label
+                for="password"
+                class="text-[15px] text-black pl-3 flex gap-4 items-center"
+              >
+                <img src="./images/lock.svg" alt="lock" />
+                <span>Password</span>
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="focus:outline-none px-4 w-full py-3 rounded-2xl border border-brand-gray-700 bg-brand-gray-100 focus:ring-0"
+              />
+            </div>
+            <div class="w-full pt-4">
+              <a
+                href="dashboard.html"
+                class="text-white hover:bg-opacity-85 transition-all duration-200 uppercase w-full rounded-lg bg-primary text-lg px-4 py-2"
+              >
+                INVIA
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./js/custom.js"></script>
+  </body>
+</html>

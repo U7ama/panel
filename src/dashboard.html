@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-nunito text-[15px]">
+    <div class="">
+      <aside class="w-[140px] fixed top-0 left-0 bottom-0 bg-dark shrink-0">
+        <a
+          href="dashboard.html"
+          class="flex flex-col justify-center items-center pt-12"
+        >
+          <h3
+            class="text-[30px] leading-none font-semibold text-center text-white"
+          >
+            Ge.F.A
+          </h3>
+          <p class="text-[7px] text-white">Gestione Finanza Agevolata</p>
+        </a>
+        <div
+          class="mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto"
+        >
+          <ul class="grid gap-12">
+            <li>
+              <a href="users.html">
+                <img class="size-[32px]" src="./images/user.svg" alt="user" />
+              </a>
+            </li>
+            <li>
+              <a href="announcements.html">
+                <img
+                  class="size-[32px]"
+                  src="./images/time-left.svg"
+                  alt="time-left"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="application.html">
+                <img class="size-[32px]" src="./images/check.svg" alt="check" />
+              </a>
+            </li>
+            <li>
+              <a href="delivery.html">
+                <img class="size-[32px]" src="./images/euro.svg" alt="euro" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  class="size-[32px]"
+                  src="./images/fingerprint.svg"
+                  alt="fingerprint"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="patners.html">
+                <img class="size-[32px]" src="./images/users.svg" alt="users" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  class="size-[32px]"
+                  src="./images/automatic-doors.svg"
+                  alt="automatic-doors"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <div class="ml-[140px]">
+        <header class="bg-primary py-4 pl-28">
+          <div class="max-w-[1340px] flex justify-between items-center">
+            <h2 class="text-[60px] font-semibold text-white">Dashboard</h2>
+            <div class="flex items-center gap-32">
+              <p class="text-white text-[15px]">
+                Lun. 09 Gennaio 2023 | ora: 18,30
+              </p>
+              <div class="flex gap-8 items-center">
+                <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p>
+                <button type="button">
+                  <img src="./images/logout.svg" alt="logout.svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div
+          class="min-h-[calc(100vh-125px)] max-h-[calc(100vh-125px)] overflow-y-auto flex pt-14 2xl:pt-20 pb-10"
+        >
+          <div class="max-w-full w-[810px] mx-auto">
+            <div class="grid grid-cols-2 gap-4">
+              <a
+                href="announcements.html"
+                class="rounded-xl bg-brand-gray-50 border border-brand-gray-700 p-6 shadow-3xl flex justify-between gap-3 items-start"
+              >
+                <div class="space-y-4">
+                  <div class="min-h-[75px]">
+                    <h3
+                      class="uppercase text-[25px] leading-[1.1] font-semibold line-clamp-2"
+                    >
+                      ARCHIVIO BANDI
+                    </h3>
+                  </div>
+                  <p class="text-[15px] text-dark line-clamp-2">
+                    Pratiche con fondi erogati
+                  </p>
+                </div>
+                <div class="space-y-4 w-20 shrink-0 flex-col flex items-center">
+                  <figure>
+                    <img
+                      class="size-[64px]"
+                      src="./images/time-left.svg"
+                      alt="time-left.svg"
+                    />
+                  </figure>
+                  <h2 class="text-center text-[36px] font-bold text-primary">
+                    123
+                  </h2>
+                </div>
+              </a>
+              <a
+                href="application.html"
+                class="rounded-xl bg-brand-gray-50 border border-brand-gray-700 p-6 shadow-3xl flex justify-between gap-3 items-start"
+              >
+                <div class="space-y-4">
+                  <div class="min-h-[75px]">
+                    <h3
+                      class="uppercase text-[25px] leading-[1.1] font-semibold line-clamp-2"
+                    >
+                      STATO DOMANDE
+                    </h3>
+                  </div>
+                  <p class="text-[15px] text-dark line-clamp-2">
+                    Controllo e verifica dello stato delle pratiche in corso.
+                  </p>
+                </div>
+                <div class="space-y-4 w-20 shrink-0 flex-col flex items-center">
+                  <figure>
+                    <img
+                      class="size-[64px]"
+                      src="./images/check.svg"
+                      alt="check.svg"
+                    />
+                  </figure>
+                  <h2 class="text-center text-[36px] font-bold text-primary">
+                    076
+                  </h2>
+                </div>
+              </a>
+              <a
+                href="delivery.html"
+                class="rounded-xl bg-brand-gray-50 border border-brand-gray-700 p-6 shadow-3xl flex justify-between gap-3 items-start"
+              >
+                <div class="space-y-4">
+                  <div class="min-h-[75px]">
+                    <h3
+                      class="uppercase text-[25px] leading-[1.1] font-semibold line-clamp-2"
+                    >
+                      EROGAZIONI
+                    </h3>
+                  </div>
+                  <p class="text-[15px] text-dark line-clamp-2">
+                    Pratiche con fondi erogati
+                  </p>
+                </div>
+                <div class="space-y-4 w-20 shrink-0 flex-col flex items-center">
+                  <figure>
+                    <img
+                      class="size-[64px]"
+                      src="./images/euro.svg"
+                      alt="euro.svg"
+                    />
+                  </figure>
+                  <h2 class="text-center text-[36px] font-bold text-primary">
+                    035
+                  </h2>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="rounded-xl bg-brand-gray-50 border border-brand-gray-700 p-6 shadow-3xl flex justify-between gap-3 items-start"
+              >
+                <div class="space-y-4">
+                  <div class="min-h-[75px]">
+                    <h3
+                      class="uppercase text-[25px] leading-[1.1] font-semibold line-clamp-2"
+                    >
+                      SPID & FIRMA DIGITALE
+                    </h3>
+                  </div>
+                  <p class="text-[15px] text-dark line-clamp-2">
+                    Attivazione SPID e Firma Digitale per gli utenti
+                  </p>
+                </div>
+                <div class="space-y-4 w-20 shrink-0 flex-col flex items-center">
+                  <figure>
+                    <img
+                      class="size-[64px]"
+                      src="./images/fingerprint.svg"
+                      alt="fingerprint.svg"
+                    />
+                  </figure>
+                </div>
+              </a>
+              <div
+                href="patners.html"
+                class="rounded-xl bg-brand-gray-50 border border-brand-gray-700 p-6 shadow-3xl flex justify-between gap-3 items-start"
+              >
+                <div class="space-y-4">
+                  <div class="min-h-[75px]">
+                    <h3
+                      class="uppercase text-[25px] leading-[1.1] font-semibold line-clamp-2"
+                    >
+                      PARTNERS
+                    </h3>
+                  </div>
+                  <p class="text-[15px] text-dark line-clamp-2">
+                    Controlla l’attività dei partners. Aggiungi/revoca
+                    credenziali.
+                  </p>
+                </div>
+                <div class="space-y-4 w-20 shrink-0 flex-col flex items-center">
+                  <figure>
+                    <img
+                      class="size-[64px]"
+                      src="./images/users.svg"
+                      alt="users.svg"
+                    />
+                  </figure>
+                  <h2 class="text-center text-[36px] font-bold text-primary">
+                    123
+                  </h2>
+                </div>
+              </div>
+              <a
+                href="users.html"
+                class="rounded-xl bg-brand-gray-50 border border-brand-gray-700 p-6 shadow-3xl flex justify-between gap-3 items-start"
+              >
+                <div class="space-y-4">
+                  <div class="min-h-[75px]">
+                    <h3
+                      class="uppercase text-[25px] leading-[1.1] font-semibold line-clamp-2"
+                    >
+                      UTENTI
+                    </h3>
+                  </div>
+                  <p class="text-[15px] text-dark line-clamp-2">
+                    Lista dei utenti iscritti alla piattaforma
+                  </p>
+                </div>
+                <div class="space-y-4 w-20 shrink-0 flex-col flex items-center">
+                  <figure>
+                    <img
+                      class="size-[64px]"
+                      src="./images/user.svg"
+                      alt="user.svg"
+                    />
+                  </figure>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="font-nunito text-[15px]">
+  <div class="">
+    <aside class="w-[140px] fixed top-0 left-0 bottom-0 bg-dark shrink-0">
+      <a href="dashboard.html" class="flex flex-col justify-center items-center pt-12">
+        <h3 class="text-[30px] leading-none font-semibold text-center text-white">
+          Ge.F.A
+        </h3>
+        <p class="text-[7px] text-white">Gestione Finanza Agevolata</p>
+      </a>
+      <div class="mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
+        <ul class="grid gap-12">
+          <li>
+            <a href="users.html">
+              <img class="size-[32px]" src="./images/user.svg" alt="user" />
+            </a>
+          </li>
+          <li>
+            <a href="announcements.html">
+              <img class="size-[32px]" src="./images/time-left.svg" alt="time-left" />
+            </a>
+          </li>
+          <li>
+            <a href="application.html">
+              <img class="size-[32px]" src="./images/check.svg" alt="check" />
+            </a>
+          </li>
+          <li>
+            <a href="delivery.html">
+              <img class="size-[32px]" src="./images/euro.svg" alt="euro" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="size-[32px]" src="./images/fingerprint.svg" alt="fingerprint" />
+            </a>
+          </li>
+          <li>
+            <a href="patners.html">
+              <img class="size-[32px]" src="./images/users.svg" alt="users" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="size-[32px]" src="./images/automatic-doors.svg" alt="automatic-doors" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="ml-[140px]">
+      <header class="bg-primary py-4 pl-28">
+        <div class="max-w-[1340px] flex justify-between items-center">
+          <h2 class="text-[60px] font-semibold text-white">Dashboard</h2>
+          <div class="flex items-center gap-32">
+            <p class="text-white text-[15px]">
+              Lun. 09 Gennaio 2023 | ora: 18,30
+            </p>
+            <div class="flex gap-8 items-center">
+              <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p>
+              <button type="button">
+                <img src="./images/logout.svg" alt="logout.svg" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="min-h-[calc(100vh-125px)] max-h-[calc(100vh-125px)] overflow-y-auto flex pt-14 2xl:pt-20 pb-10">
+        <div class="max-w-full w-[1088px] mx-auto space-y-12">
+          <div class="grid grid-cols-4 gap-8">
+            <div class="relative">
+              <input type="text"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
+                placeholder="PRATICA/NOME" />
+              <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
+            </div>
+            <div class="relative">
+              <input type="text"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
+                placeholder="STATO PAGAMENTI" />
+              <div class="absolute top-1/2 -translate-y-1/2 right-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="stroke-brand-gray-700/80">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="relative">
+              <input type="text"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
+                placeholder="ASSEGNAZIONE" />
+              <div class="absolute top-1/2 -translate-y-1/2 right-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="stroke-brand-gray-700/80">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="relative flex justify-end">
+              <button id="openModal" type="button"
+                class="px-8 py-2 font-medium rounded-lg text-white bg-primary hover:bg-opacity-80 transition-all">
+                APPLICA
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <table id="dataTable" class="w-full text-[15px]">
+              <thead>
+                <tr>
+                  <th class="text-left w-40 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    PRATICA
+                  </th>
+                  <th class="text-left w-40 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    NOME
+                  </th>
+                  <th class="text-left w-32 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    APERTURA
+                  </th>
+                  <th class="text-left w-32 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    SCADENZA
+                  </th>
+                  <th class="text-left w-40 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    SOGGETTO
+                  </th>
+                  <th class="text-left w-52 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    STATO PAGAMENTI
+                  </th>
+                  <th class="text-left w-40 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    AZIONI
+                  </th>
+                </tr>
+              </thead>
+              <tboday>
+                <tr>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    0123456789
+                  </td>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    <p class="text-sm px-3 text-white text-center py-1 w-[145px] bg-brand-green rounded">
+                      Antonio ROSSI
+                    </p>
+                  </td>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    01/01/2023
+                  </td>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    01/01/2023
+                  </td>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    Associazione
+                  </td>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    <div class="flex gap-7 items-center">
+                      <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-full bg-brand-green shrink-0"></div>
+                        <p class="text-black">PAGATO</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
+                    <div class="flex gap-4 items-center">
+                      <button type="button"
+                        class="size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all">
+                        <figure>
+                          <img src="./images/eye.svg" alt="eye.svg" />
+                        </figure>
+                      </button>
+                      <button type="button"
+                        class="size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all">
+                        <figure>
+                          <img src="./images/wallet.svg" alt="wallet.svg" />
+                        </figure>
+                      </button>
+                      <button type="button"
+                        class="size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all">
+                        <figure>
+                          <img src="./images/assegna.svg" alt="assegna.svg" />
+                        </figure>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tboday>
+            </table>
+          </div>
+          <div class="flex justify-between items-center">
+            <button type="button"
+              class="flex bg-brand-gray-50 text-primary border border-primary items-center px-3 py-2 rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="rotate-180">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              <span>INDIETRO</span>
+            </button>
+            <ul class="flex gap-1.5 items-center">
+              <li class="group active">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">1
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">2
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">3
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">4
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">5
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">6
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">7
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">8
+                </a>
+              </li>
+              <li class="group">
+                <a href="#" class="group-[.active]:underline text-[15px] text-primary">9
+                </a>
+              </li>
+            </ul>
+            <button type="button"
+              class="flex bg-primary hover:bg-opacity-80 text-white border border-primary items-center px-3 py-2 rounded-md">
+              <span>AVANTI</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--======================start coding for modal popup ====================================-->
+
+  <div id="modalPopup" class="fixed inset-0 z-50 w-full h-full bg-black/40 overflow-y-auto py-4" style="display: none;">
+    <div class="max-w-[738px] mx-auto bg-white rounded-lg border border-brand-gray-700 mt-8 2xl:mt-14">
+      <div class="w-full relative h-full p-8 2xl:p-14 space-y-6">
+        <h2 class="text-[36px] leading-none font-bold text-black">
+          Stato utente/pratica
+        </h2>
+        <form action="" class="space-y-3 2xl:space-y-6">
+          <div class="grid grid-cols-2 gap-2.5 2xl:gap-4">
+            <div class="relative space-y-1">
+              <label for="name" class="block text-[15px] text-dark pl-3">Nome</label>
+              <input type="text" id="name"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="Giovanni" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="Balletta" class="block text-[15px] text-dark pl-3">Cognome</label>
+              <input type="text" id="Balletta"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="Giovanni" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="Luogo di nascita" class="block text-[15px] text-dark pl-3">Luogo di nascita</label>
+              <input type="text" id="Luogo di nascita"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="Giovanni" />
+            </div>
+            <div class="grid grid-cols-2 gap-10 pl-8">
+              <div class="relative space-y-1">
+                <label for="Prov" class="block text-[15px] text-dark pl-3">Prov.</label>
+                <input type="text" id="Prov"
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                  placeholder="VE" />
+              </div>
+              <div class="relative space-y-1">
+                <label for="nascita" class="block text-[15px] text-dark pl-3">Data nascita</label>
+                <input type="text" id="nascita"
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                  placeholder="09/08/1975" />
+              </div>
+            </div>
+            <div class="relative space-y-1 col-span-2">
+              <label for="Codice Fiscale" class="block text-[15px] text-dark pl-3">Codice Fiscale</label>
+              <input type="text" id="Codice Fiscale"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="BLLGNN75M09F839H" />
+            </div>
+            <div class="relative space-y-1 col-span-2">
+              <label for="Indirizzo" class="block text-[15px] text-dark pl-3">Indirizzo</label>
+              <input type="text" id="Indirizzo"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="Sestiere Castello 32" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="Comune di Residenza" class="block text-[15px] text-dark pl-3">Comune di Residenza</label>
+              <input type="text" id="Comune di Residenza"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="Venezia" />
+            </div>
+            <div class="grid grid-cols-2 gap-10 pl-8">
+              <div class="relative space-y-1">
+                <label for="Prov" class="block text-[15px] text-dark pl-3">Prov.</label>
+                <input type="text" id="Prov"
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                  placeholder="VE" />
+              </div>
+              <div class="relative space-y-1">
+                <label for="CAP" class="block text-[15px] text-dark pl-3">CAP</label>
+                <input type="text" id="CAP"
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                  placeholder="09/08/1975" />
+              </div>
+            </div>
+            <div class="relative space-y-1">
+              <label for="N. Pratica" class="block text-[15px] text-dark pl-3">N. Pratica</label>
+              <input type="text" id="N. Pratica"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="0123456789" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="Creata il" class="block text-[15px] text-dark pl-3">Creata il</label>
+              <input type="text" id="Creata il"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="01/01/2023" />
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="relative space-y-1 w-[275px] shrink-0">
+              <label for="Stato pratica" class="block text-[15px] text-dark pl-3">Stato pratica</label>
+              <input type="text" id="Stato pratica"
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                placeholder="Presentata" />
+            </div>
+            <div class="flex gap-6 w-full items-end">
+              <div class="relative space-y-1 w-full">
+                <label for="Aggiornata al" class="block text-[15px] text-dark pl-3">Aggiornata al</label>
+                <input type="text" id="Aggiornata al"
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
+                  placeholder="01/01/2023" />
+              </div>
+              <button type="button"
+                class="size-[30px] mb-1.5 shrink-0 rounded-full bg-primary flex justify-center items-center text-[32px] font-bold text-white">
+                +
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-end gap-4 2xl:pt-5">
+            <button type="button" id="closeModal"
+              class="px-10 py-2.5 rounded-lg border border-primary text-primary uppercase bg-brand-gray-50">
+              CHIUDI
+            </button>
+
+            <button type="button" id="saveAndUpdate"
+              class="uppercase px-5 py-2.5 text-white bg-primary rounded-lg hover:bg-opacity-80 transition-all">
+              SALVA E INVIA AGGIORNAMENTO
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('modalPopup');
+      var openBtn = document.getElementById('openModal');
+      var closeBtn = document.getElementById('closeModal');
+
+      openBtn.addEventListener('click', function () {
+        modal.style.display = 'block';
+      });
+
+      closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const saveAndUpdateButton = document.getElementById('saveAndUpdate');
+
+      saveAndUpdateButton.addEventListener('click', function () {
+
+        const name = document.getElementById('name').value;
+        const lastName = document.getElementById('Balletta').value;
+        const birthPlace = document.getElementById('Luogo di nascita').value;
+        const province = document.getElementById('Prov').value;
+        const birthDate = document.getElementById('nascita').value;
+        const fiscalCode = document.getElementById('Codice Fiscale').value;
+        const address = document.getElementById('Indirizzo').value;
+        const residency = document.getElementById('Comune di Residenza').value;
+        const cap = document.getElementById('CAP').value;
+        const practiceNumber = document.getElementById('N. Pratica').value;
+        const creationDate = document.getElementById('Creata il').value;
+        const status = document.getElementById('Stato pratica').value;
+
+        var table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow();
+        var cellClasses = 'first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl';
+
+        var cell1 = newRow.insertCell(0);
+        cell1.className = cellClasses;
+        cell1.innerHTML = practiceNumber;
+
+        var cell2 = newRow.insertCell(1);
+        cell2.className = cellClasses;
+        cell2.innerHTML = `<p class="text-sm px-3 text-white text-center py-1 w-[145px] bg-brand-green rounded">
+                     ${name} ${lastName}
+                    </p>`;
+
+        var cell3 = newRow.insertCell(2);
+        cell3.className = cellClasses;
+        cell3.innerHTML = birthDate;
+
+        var cell4 = newRow.insertCell(3);
+        cell4.className = cellClasses;
+        cell4.innerHTML = creationDate;
+
+        var cell5 = newRow.insertCell(4);
+        cell5.className = cellClasses;
+        cell5.innerHTML = address;
+
+        var cell6 = newRow.insertCell(5);
+        cell6.className = cellClasses;
+        cell6.innerHTML = `<div class="flex gap-7 items-center">
+                      <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-full bg-brand-green shrink-0"></div>
+                        <p class="text-black">${status}</p>
+                      </div>
+                    </div>`;
+
+        var cell7 = newRow.insertCell(6);
+        cell7.className = cellClasses;
+        cell7.innerHTML = `<div class="flex gap-4 items-center">
+                      <button type="button"
+                        class="size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all">
+                        <figure>
+                          <img src="./images/eye.svg" alt="eye.svg" />
+                        </figure>
+                      </button>
+                      <button type="button"
+                        class="size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all">
+                        <figure>
+                          <img src="./images/wallet.svg" alt="wallet.svg" />
+                        </figure>
+                      </button>
+                      <button type="button"
+                        class="size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all">
+                        <figure>
+                          <img src="./images/assegna.svg" alt="assegna.svg" />
+                        </figure>
+                      </button>
+                    </div>`;
+
+        document.getElementById('name').value = '';
+        document.getElementById('Balletta').value = '';
+        document.getElementById('Luogo di nascita').value = '';
+        document.getElementById('Prov').value = '';
+        document.getElementById('nascita').value = '';
+        document.getElementById('Codice Fiscale').value = '';
+        document.getElementById('Indirizzo').value = '';
+        document.getElementById('Comune di Residenza').value = '';
+        document.getElementById('CAP').value = '';
+        document.getElementById('N. Pratica').value = '';
+        document.getElementById('Creata il').value = '';
+        document.getElementById('Stato pratica').value = '';
+        document.getElementById('modalPopup').style.display = 'none';
+
+      });
+    });
+  </script>
+
+
+  <script src="./js/custom.js"></script>
+</body>
+
+</html>
