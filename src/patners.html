@@ -12,6 +12,9 @@
     href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>
+    const BASE_URL = 'http://localhost:8080/api';
+  </script>
 </head>
 
 <body class="font-nunito text-[15px]">
@@ -305,7 +308,7 @@
       fetchPartners();
 
       function fetchPartners() {
-        fetch('http://localhost:8080/api/partners')
+        fetch(`${BASE_URL}/partners`)
           .then(response => response.json())
           .then(data => {
             const sortedData = data.data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
@@ -403,7 +406,7 @@
           }
         };
 
-        fetch('http://localhost:8080/api/partners', {
+        fetch(`${BASE_URL}/partners`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -470,7 +473,7 @@
       applicaButton.addEventListener('click', filterTable);
     });
   </script>
-  <script src="./js/custom.js"></script>
+
 </body>
 
 </html>

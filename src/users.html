@@ -12,6 +12,9 @@
     href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>
+    const BASE_URL = 'http://localhost:8080/api';
+  </script>
 </head>
 
 <body class="font-nunito text-[15px]">
@@ -332,6 +335,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      console.log(BASE_URL)
       fetchUsers();
       const saveAndUpdateButton = document.getElementById('saveAndUpdate');
       const PAGE_SIZE = 5; // Number of records per page
@@ -395,7 +399,7 @@
           }
         };
 
-        fetch('http://localhost:8080/api/users', {
+        fetch(`${BASE_URL}/users`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -437,7 +441,7 @@
       });
       // Function to fetch users from the endpoint and display them
       function fetchUsers() {
-        fetch('http://localhost:8080/api/users')
+        fetch(`${BASE_URL}/users`)
           .then(response => response.json())
           .then(data => {
             const sortedData = data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
@@ -585,7 +589,7 @@
   </script>
 
 
-  <script src="./js/custom.js"></script>
+
 </body>
 
 </html>

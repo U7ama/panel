@@ -12,6 +12,9 @@
     href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>
+    const BASE_URL = 'http://localhost:8080/api';
+  </script>
 </head>
 
 <body class="font-nunito text-[15px]">
@@ -194,7 +197,7 @@
 
 
       function fetchDeliveries() {
-        fetch('http://localhost:8080/api/applications')
+        fetch(`${BASE_URL}/applications`)
           .then(response => response.json())
           .then(data => {
             deliveryData = data.data;

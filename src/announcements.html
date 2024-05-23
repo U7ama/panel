@@ -12,6 +12,9 @@
     href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>
+    const BASE_URL = 'http://localhost:8080/api';
+  </script>
 </head>
 
 <body class="font-nunito text-[15px]">
@@ -366,7 +369,7 @@
 
       // Function to fetch announcement data from the endpoint
       function fetchAnnouncements() {
-        fetch('http://localhost:8080/api/announcements')
+        fetch(`${BASE_URL}/announcements`)
           .then(response => response.json())
           .then(data => {
             const sortedData = data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
@@ -478,7 +481,7 @@
           }
         }
 
-        fetch('http://localhost:8080/api/announcements', {
+        fetch(`${BASE_URL}/announcements`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -551,7 +554,7 @@
 
   </script>
 
-  <script src="./js/custom.js"></script>
+
 </body>
 
 </html>
