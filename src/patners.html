@@ -372,7 +372,7 @@
           </td>
           <td class="p-2.5 text-right first:pl-6 border-y border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
               <button type="button" class="w-[116px] text-center text-white bg-brand-green py-1.5 rounded-lg">
-                  ${partner.contactPerson}
+                  ${partner.contact_person.username}
               </button>
           </td>
         `;
@@ -389,6 +389,7 @@
         const pec = document.getElementById('PEC').value;
         const telephone = document.getElementById('Telefono').value;
         const cell_phone = document.getElementById('Cellulare').value;
+        const contact_person_user = document.getElementById('Cellulare1').value;
         const contact_person_username = document.getElementById('User').value;
         const contact_person_password = document.getElementById('Password').value;
         const partner = {
@@ -402,6 +403,7 @@
           cell_phone: cell_phone,
           contact_person: {
             username: contact_person_username,
+            user: contact_person_user,
             password: contact_person_password
           }
         };

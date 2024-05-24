@@ -93,7 +93,7 @@
           </div>
           <div class="grid grid-cols-6 gap-6">
             <div class="relative">
-              <input type="text"
+              <input type="text" id="SETTORE"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
                 placeholder="SETTORE" />
               <div class="absolute top-1/2 -translate-y-1/2 right-1.5">
@@ -180,9 +180,9 @@
                   </th>
                 </tr>
               </thead>
-              <tboday>
+              <tbody>
                 <tr></tr>
-              </tboday>
+              </tbody>
             </table>
           </div>
           <div class="flex justify-between items-center">
@@ -521,6 +521,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      const settoreInput = document.getElementById('SETTORE');
       const regioneInput = document.getElementById('REGIONE');
       const soggettoInput = document.getElementById('SOGGETTO');
       const tipoSpesaInput = document.getElementById('TIPO SPESA');
@@ -529,6 +530,7 @@
 
       function filterTable() {
         const tableRows = document.querySelectorAll('#dataTable tbody tr');
+        const settoreText = settoreInput.value.toUpperCase();
         const regioneText = regioneInput.value.toUpperCase();
         const soggettoText = soggettoInput.value.toUpperCase();
         const tipoSpesaText = tipoSpesaInput.value.toUpperCase();
@@ -536,24 +538,24 @@
 
         tableRows.forEach(row => {
           const cells = row.querySelectorAll('td');
-          const regioneCell = cells[1] ? cells[1].textContent.toUpperCase() : '';
           const soggettoCell = cells[2] ? cells[2].textContent.toUpperCase() : '';
+          const regioneCell = cells[1] ? cells[1].textContent.toUpperCase() : '';
           const tipoSpesaCell = cells[3] ? cells[3].textContent.toUpperCase() : '';
           const agevolazioneCell = cells[4] ? cells[4].textContent.toUpperCase() : '';
 
-          const isVisible = regioneCell.includes(regioneText) && soggettoCell.includes(soggettoText) &&
-            tipoSpesaCell.includes(tipoSpesaText) && agevolazioneCell.includes(agevolazioneText);
+          const isVisible = soggettoCell.includes(settoreText) &&
+            regioneCell.includes(regioneText) &&
+            soggettoCell.includes(soggettoText) &&
+            tipoSpesaCell.includes(tipoSpesaText) &&
+            agevolazioneCell.includes(agevolazioneText);
+
           row.style.display = isVisible ? '' : 'none';
         });
       }
 
-
       applicaButton.addEventListener('click', filterTable);
     });
-
-
   </script>
-
 
 </body>
 

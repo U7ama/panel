@@ -570,13 +570,15 @@
 
           tableRows.forEach(row => {
             const cells = row.querySelectorAll('td');
-            const soggettoCell = cells[1] ? cells[1].textContent.toUpperCase() : '';
-            const pagamentiCell = cells[2] ? cells[2].textContent.toUpperCase() : '';
-            const assegnazioneCell = cells[3] ? cells[3].textContent.toUpperCase() : '';
+            const praticaCell = cells[0] ? cells[0].textContent.toUpperCase() : '';
+            const nomeCell = cells[1] ? cells[1].textContent.toUpperCase() : '';
+            const soggettoCell = cells[4] ? cells[4].textContent.toUpperCase() : '';
+            const pagamentiCell = cells[5] ? cells[5].textContent.toUpperCase() : '';
 
-            const isVisible = soggettoCell.includes(soggettoText) &&
+            const isVisible = (praticaCell.includes(soggettoText) || nomeCell.includes(soggettoText)) &&
               pagamentiCell.includes(pagamentiText) &&
-              assegnazioneCell.includes(assegnazioneText);
+              soggettoCell.includes(assegnazioneText);
+
             row.style.display = isVisible ? '' : 'none';
           });
         }

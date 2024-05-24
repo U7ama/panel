@@ -93,19 +93,19 @@
           </div>
           <div class="grid grid-cols-4 justify-between gap-14">
             <div class="relative">
-              <input type="text"
+              <input type="text" id="DATA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
                 placeholder="DATA" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text"
+              <input type="text" id="UTENTE_PRATICA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
                 placeholder="UTENTE/PRATICA" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text"
+              <input type="text" id="STATO_PRATICA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
                 placeholder="STATO PRATICA" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
@@ -117,7 +117,7 @@
               </div>
             </div>
             <div class="relative flex justify-end">
-              <button type="button"
+              <button type="button" id="applicaButton"
                 class="px-8 py-2 font-medium rounded-lg text-white bg-primary hover:bg-opacity-80 transition-all">
                 APPLICA
               </button>
@@ -141,9 +141,9 @@
                   </th>
                 </tr>
               </thead>
-              <tboday>
+              <tbody>
                 <tr></tr>
-              </tboday>
+              </tbody>
             </table>
           </div>
           <div class="flex justify-between items-center">
@@ -419,7 +419,37 @@
     });
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dataInput = document.getElementById('DATA');
+      const utentePraticaInput = document.getElementById('UTENTE_PRATICA');
+      const statoPraticaInput = document.getElementById('STATO_PRATICA');
+      const applicaButton = document.getElementById('applicaButton');
 
+      function filterTable() {
+        const tableRows = document.querySelectorAll('#dataTable tbody tr');
+        const dataText = dataInput.value.toUpperCase();
+        const utentePraticaText = utentePraticaInput.value.toUpperCase();
+        const statoPraticaText = statoPraticaInput.value.toUpperCase();
+
+        tableRows.forEach(row => {
+          const cells = row.querySelectorAll('td');
+          const dataCell = cells[0] ? cells[0].textContent.toUpperCase() : '';
+          const utenteCell = cells[1] ? cells[1].textContent.toUpperCase() : '';
+          const praticaCell = cells[2] ? cells[2].textContent.toUpperCase() : '';
+          const statoCell = cells[3] ? cells[3].textContent.toUpperCase() : '';
+
+          const isVisible = dataCell.includes(dataText) &&
+            (utenteCell.includes(utentePraticaText) || praticaCell.includes(utentePraticaText)) &&
+            statoCell.includes(statoPraticaText);
+
+          row.style.display = isVisible ? '' : 'none';
+        });
+      }
+
+      applicaButton.addEventListener('click', filterTable);
+    });
+  </script>
 
 
 </body>

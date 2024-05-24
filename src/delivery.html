@@ -87,19 +87,19 @@
         <div class="max-w-full w-[1226px] mx-auto space-y-12">
           <div class="grid grid-cols-4 justify-between gap-14">
             <div class="relative">
-              <input type="text"
+              <input type="text" id="DATA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
                 placeholder="DATA" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text"
+              <input type="text" id="UTENTE_PRATICA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
                 placeholder="UTENTE/PRATICA" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text"
+              <input type="text" id="STATO_PRATICA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
                 placeholder="STATO PRATICA" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
@@ -111,14 +111,14 @@
               </div>
             </div>
             <div class="relative flex justify-end">
-              <button type="button"
+              <button type="button" id="applicaButton"
                 class="px-8 py-2 font-medium rounded-lg text-white bg-primary hover:bg-opacity-80 transition-all">
                 APPLICA
               </button>
             </div>
           </div>
           <div class="">
-            <table class="w-full text-[15px]">
+            <table id="dataTable" class="w-full text-[15px]">
               <thead>
                 <tr>
                   <th class="text-left w-80 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
@@ -197,7 +197,7 @@
 
 
       function fetchDeliveries() {
-        fetch(`${BASE_URL}/applications`)
+        fetch(`${BASE_URL}/users`)
           .then(response => response.json())
           .then(data => {
             deliveryData = data.data;
@@ -216,7 +216,7 @@
 
         const table = document.querySelector('tbody');
         table.innerHTML = '';
-
+        console.log("deliveriesToShow", deliveriesToShow)
         deliveriesToShow.forEach(delivery => {
           console.log("delivery", delivery)
           const newRow = table.insertRow();
@@ -224,21 +224,21 @@
 
           const cell1 = newRow.insertCell(0);
           cell1.className = cellClasses;
-          cell1.innerHTML = `<p class="text-sm px-1 text-white text-center py-1 w-[160px] bg-brand-green rounded">${new Date(delivery.date).toLocaleDateString()}</p>`;
+          cell1.innerHTML = `<p class="text-sm px-1 text-white text-center py-1 w-[160px] bg-brand-green rounded">${new Date(delivery.createdAt).toLocaleDateString()}</p>`;
 
           const cell2 = newRow.insertCell(1);
           cell2.className = cellClasses;
-          cell2.innerHTML = delivery.user;
+          cell2.innerHTML = delivery.name;
 
           const cell3 = newRow.insertCell(2);
           cell3.className = cellClasses;
-          cell3.innerHTML = delivery.practice;
+          cell3.innerHTML = delivery.practice_details.n_practice;
 
           const cell4 = newRow.insertCell(3);
           cell4.className = cellClasses;
           cell4.innerHTML = `<div class="flex gap-2 items-center">
                          <div class="size-4 rounded-full bg-brand-green shrink-0"></div>
-                         <p class="text-black">${delivery.state}</p>
+                         <p class="text-black">${delivery.practice_details.practical_state}</p>
                        </div>`;
         });
       }
@@ -277,6 +277,39 @@
     });
 
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dataInput = document.getElementById('DATA');
+      const utentePraticaInput = document.getElementById('UTENTE_PRATICA');
+      const statoPraticaInput = document.getElementById('STATO_PRATICA');
+      const applicaButton = document.getElementById('applicaButton');
+
+      function filterTable() {
+        const tableRows = document.querySelectorAll('#dataTable tbody tr');
+        const dataText = dataInput.value.toUpperCase();
+        const utentePraticaText = utentePraticaInput.value.toUpperCase();
+        const statoPraticaText = statoPraticaInput.value.toUpperCase();
+
+        tableRows.forEach(row => {
+          const cells = row.querySelectorAll('td');
+          const dataCell = cells[0] ? cells[0].textContent.toUpperCase() : '';
+          const utenteCell = cells[1] ? cells[1].textContent.toUpperCase() : '';
+          const praticaCell = cells[2] ? cells[2].textContent.toUpperCase() : '';
+          const statoCell = cells[3] ? cells[3].textContent.toUpperCase() : '';
+
+          const isVisible = dataCell.includes(dataText) &&
+            (utenteCell.includes(utentePraticaText) || praticaCell.includes(utentePraticaText)) &&
+            statoCell.includes(statoPraticaText);
+
+          row.style.display = isVisible ? '' : 'none';
+        });
+      }
+
+      applicaButton.addEventListener('click', filterTable);
+    });
+  </script>
+
 </body>
 
 </html>
