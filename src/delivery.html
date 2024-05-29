@@ -13,59 +13,58 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <script>
-    const BASE_URL = 'http://54.221.153.188:8080/api';
+    const BASE_URL = 'http://localhost:8080/api';
   </script>
 </head>
 
 <body class="font-nunito text-[15px]">
   <div class="">
-    <aside class="w-[140px] fixed top-0 left-0 bottom-0 bg-dark shrink-0">
+    <aside>
       <a href="dashboard.html" class="flex flex-col justify-center items-center pt-12">
-        <h3 class="text-[30px] leading-none font-semibold text-center text-white">
-          Ge.F.A
-        </h3>
-        <p class="text-[7px] text-white">Gestione Finanza Agevolata</p>
+        <h3>Ge.F.A</h3>
+        <p>Gestione Finanza Agevolata</p>
       </a>
-      <div class="mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
-        <ul class="grid gap-12">
+      <div class="menu mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
+        <ul>
           <li>
             <a href="users.html">
-              <img class="size-[32px]" src="./images/user.svg" alt="user" />
+              <img src="./images/user.svg" alt="user" />
             </a>
           </li>
           <li>
             <a href="announcements.html">
-              <img class="size-[32px]" src="./images/time-left.svg" alt="time-left" />
+              <img src="./images/time-left.svg" alt="time-left" />
             </a>
           </li>
           <li>
             <a href="application.html">
-              <img class="size-[32px]" src="./images/check.svg" alt="check" />
+              <img src="./images/check.svg" alt="check" />
             </a>
           </li>
           <li>
             <a href="delivery.html">
-              <img class="size-[32px]" src="./images/euro.svg" alt="euro" />
+              <img src="./images/euro.svg" alt="euro" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img class="size-[32px]" src="./images/fingerprint.svg" alt="fingerprint" />
+              <img src="./images/fingerprint.svg" alt="fingerprint" />
             </a>
           </li>
           <li>
             <a href="patners.html">
-              <img class="size-[32px]" src="./images/users.svg" alt="users" />
+              <img src="./images/users.svg" alt="users" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img class="size-[32px]" src="./images/automatic-doors.svg" alt="automatic-doors" />
+              <img src="./images/automatic-doors.svg" alt="automatic-doors" />
             </a>
           </li>
         </ul>
       </div>
     </aside>
+
     <div class="ml-[140px]">
       <header class="bg-primary py-4 pl-28">
         <div class="max-w-[1340px] flex justify-between items-center">
@@ -88,20 +87,17 @@
           <div class="grid grid-cols-4 justify-between gap-14">
             <div class="relative">
               <input type="text" id="DATA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="DATA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
             </div>
             <div class="relative">
               <input type="text" id="UTENTE_PRATICA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="UTENTE/PRATICA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
               <input type="text" id="STATO_PRATICA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="STATO PRATICA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

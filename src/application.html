@@ -13,59 +13,58 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <script>
-    const BASE_URL = 'http://54.221.153.188:8080/api';
+    const BASE_URL = 'http://localhost:8080/api';
   </script>
 </head>
 
 <body class="font-nunito text-[15px]">
   <div class="">
-    <aside class="w-[140px] fixed top-0 left-0 bottom-0 bg-dark shrink-0">
+    <aside>
       <a href="dashboard.html" class="flex flex-col justify-center items-center pt-12">
-        <h3 class="text-[30px] leading-none font-semibold text-center text-white">
-          Ge.F.A
-        </h3>
-        <p class="text-[7px] text-white">Gestione Finanza Agevolata</p>
+        <h3>Ge.F.A</h3>
+        <p>Gestione Finanza Agevolata</p>
       </a>
-      <div class="mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
-        <ul class="grid gap-12">
+      <div class="menu mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
+        <ul>
           <li>
             <a href="users.html">
-              <img class="size-[32px]" src="./images/user.svg" alt="user" />
+              <img src="./images/user.svg" alt="user" />
             </a>
           </li>
           <li>
             <a href="announcements.html">
-              <img class="size-[32px]" src="./images/time-left.svg" alt="time-left" />
+              <img src="./images/time-left.svg" alt="time-left" />
             </a>
           </li>
           <li>
             <a href="application.html">
-              <img class="size-[32px]" src="./images/check.svg" alt="check" />
+              <img src="./images/check.svg" alt="check" />
             </a>
           </li>
           <li>
             <a href="delivery.html">
-              <img class="size-[32px]" src="./images/euro.svg" alt="euro" />
+              <img src="./images/euro.svg" alt="euro" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img class="size-[32px]" src="./images/fingerprint.svg" alt="fingerprint" />
+              <img src="./images/fingerprint.svg" alt="fingerprint" />
             </a>
           </li>
           <li>
             <a href="patners.html">
-              <img class="size-[32px]" src="./images/users.svg" alt="users" />
+              <img src="./images/users.svg" alt="users" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img class="size-[32px]" src="./images/automatic-doors.svg" alt="automatic-doors" />
+              <img src="./images/automatic-doors.svg" alt="automatic-doors" />
             </a>
           </li>
         </ul>
       </div>
     </aside>
+
     <div class="ml-[140px]">
       <header class="bg-primary py-4 pl-28">
         <div class="max-w-[1340px] flex justify-between items-center">
@@ -94,20 +93,17 @@
           <div class="grid grid-cols-4 justify-between gap-14">
             <div class="relative">
               <input type="text" id="DATA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="DATA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
             </div>
             <div class="relative">
               <input type="text" id="UTENTE_PRATICA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="UTENTE/PRATICA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
               <input type="text" id="STATO_PRATICA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="STATO PRATICA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -188,15 +184,13 @@
           <div class="grid grid-cols-2 gap-2.5 2xl:gap-4">
             <div class="relative space-y-1">
               <label for="Pratica" class="block text-[15px] text-dark pl-3">Pratica</label>
-              <input type="text" id="Pratica"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="0123456789" />
+              <input type="text" id="Pratica" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Utente" class="block text-[15px] text-dark pl-3">Utente</label>
-              <input type="text" id="Utente"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="Mario ROSSI" />
+              <input type="text" id="Utente" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="col-span-2 pt-2">
               <button type="button" class="w-full py-1.5 px-3 rounded-md bg-dark text-white">
@@ -211,22 +205,22 @@
               </h4>
               <div class="grid grid-cols-3 gap-4">
                 <div class="flex gap-3 items-center">
-                  <input type="radio" class="size-5 shrink-0" id="Illegibile" />
+                  <input type="radio" class="size-5 shrink-0" id="Illegibile" name="problem" required />
                   <label for="Illegibile">Illegibile</label>
                 </div>
                 <div class="flex gap-3 items-center -ml-10">
-                  <input type="radio" class="size-5 shrink-0" id="apposta" />
-                  <label for="apposta">Firma Digiale non apposta</label>
+                  <input type="radio" class="size-5 shrink-0" id="apposta" name="problem" required />
+                  <label for="apposta">Firma Digitale non apposta</label>
                 </div>
                 <div class="flex gap-3 items-center">
-                  <input type="radio" class="size-5 shrink-0" id="sospeso" />
+                  <input type="radio" class="size-5 shrink-0" id="sospeso" name="problem" required />
                   <label for="sospeso">Pagamento sospeso</label>
                 </div>
               </div>
             </div>
             <div class="relative space-y-1">
               <label for="UTENTE" class="block text-[15px] text-dark pl-3">TESTO COMUNICAZIONE UTENTE</label>
-              <textarea name="UTENTE" id="UTENTE" cols="30" rows="8" placeholder="Srivi qui il testo "
+              <textarea name="UTENTE" id="UTENTE" cols="30" rows="8" required
                 class="w-full resize-none placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"></textarea>
             </div>
           </div>
@@ -235,12 +229,13 @@
               class="px-10 py-2.5 w-[125px] text-center rounded-lg border border-primary text-primary uppercase bg-brand-gray-50">
               ANNULLA
             </button>
-            <button id="saveAndUpdate" type="button"
+            <button id="saveAndUpdate" type="submit"
               class="uppercase px-5 py-2.5 w-[125px] text-center text-white bg-primary rounded-lg hover:bg-opacity-80 transition-all">
               SALVA
             </button>
           </div>
         </form>
+
       </div>
     </div>
   </div>
@@ -296,22 +291,46 @@
         }
       });
 
-      saveAndUpdateButton.addEventListener('click', function () {
-        const practice = document.getElementById('Pratica').value;
-        const user = document.getElementById('Utente').value;
-        const problems = document.querySelectorAll('input[type="radio"]:checked');
-        let selectedProblem = '';
-        problems.forEach((problem) => {
-          if (problem.checked) {
-            selectedProblem = problem.nextElementSibling.innerText;
+      saveAndUpdateButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const requiredFields = ['Pratica', 'Utente', 'UTENTE'];
+        let isValid = true;
+        let errorMessage = '';
+
+        // Check if all required fields are filled
+        requiredFields.forEach(field => {
+          const input = document.getElementById(field);
+          if (!input.value.trim()) {
+            isValid = false;
+            input.classList.add('border-red-500'); // Highlight the invalid fields
+          } else {
+            input.classList.remove('border-red-500');
           }
         });
+
+        // Validate that a problem is selected
+        const selectedProblem = document.querySelector('input[name="problem"]:checked');
+        if (!selectedProblem) {
+          isValid = false;
+          errorMessage += 'Please select a problem to report.\n';
+        }
+
+        if (!isValid) {
+          alert(errorMessage || 'Please fill in all required fields.');
+          return;
+        }
+
+        const practice = document.getElementById('Pratica').value;
+        const user = document.getElementById('Utente').value;
+        const communicationText = document.getElementById('UTENTE').value;
 
         const application = {
           user: user,
           date: new Date().toISOString(),
           practice: practice,
-          state: selectedProblem
+          state: selectedProblem ? selectedProblem.nextElementSibling.innerText : '',
+          communication_text: communicationText
         };
 
         fetch(`${BASE_URL}/applications`, {
@@ -326,7 +345,8 @@
               console.log('Application created successfully');
               currentPage = 1;
               fetchApplications();
-              clearFormFields();
+              requiredFields.forEach(field => document.getElementById(field).value = '');
+              document.querySelectorAll('input[name="problem"]').forEach(radio => radio.checked = false);
               document.getElementById('modalPopup').style.display = 'none';
             } else {
               alert('Server error');

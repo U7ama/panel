@@ -13,59 +13,58 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <script>
-    const BASE_URL = 'http://54.221.153.188:8080/api';
+    const BASE_URL = 'http://localhost:8080/api';
   </script>
 </head>
 
 <body class="font-nunito text-[15px]">
   <div class="">
-    <aside class="w-[140px] fixed top-0 left-0 bottom-0 bg-dark shrink-0">
+    <aside>
       <a href="dashboard.html" class="flex flex-col justify-center items-center pt-12">
-        <h3 class="text-[30px] leading-none font-semibold text-center text-white">
-          Ge.F.A
-        </h3>
-        <p class="text-[7px] text-white">Gestione Finanza Agevolata</p>
+        <h3>Ge.F.A</h3>
+        <p>Gestione Finanza Agevolata</p>
       </a>
-      <div class="mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
-        <ul class="grid gap-12">
+      <div class="menu mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
+        <ul>
           <li>
             <a href="users.html">
-              <img class="size-[32px]" src="./images/user.svg" alt="user" />
+              <img src="./images/user.svg" alt="user" />
             </a>
           </li>
           <li>
             <a href="announcements.html">
-              <img class="size-[32px]" src="./images/time-left.svg" alt="time-left" />
+              <img src="./images/time-left.svg" alt="time-left" />
             </a>
           </li>
           <li>
             <a href="application.html">
-              <img class="size-[32px]" src="./images/check.svg" alt="check" />
+              <img src="./images/check.svg" alt="check" />
             </a>
           </li>
           <li>
             <a href="delivery.html">
-              <img class="size-[32px]" src="./images/euro.svg" alt="euro" />
+              <img src="./images/euro.svg" alt="euro" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img class="size-[32px]" src="./images/fingerprint.svg" alt="fingerprint" />
+              <img src="./images/fingerprint.svg" alt="fingerprint" />
             </a>
           </li>
           <li>
             <a href="patners.html">
-              <img class="size-[32px]" src="./images/users.svg" alt="users" />
+              <img src="./images/users.svg" alt="users" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img class="size-[32px]" src="./images/automatic-doors.svg" alt="automatic-doors" />
+              <img src="./images/automatic-doors.svg" alt="automatic-doors" />
             </a>
           </li>
         </ul>
       </div>
     </aside>
+
     <div class="ml-[140px]">
       <header class="bg-primary py-4 pl-28">
         <div class="max-w-[1340px] flex justify-between items-center">
@@ -94,20 +93,17 @@
           <div class="grid grid-cols-4 justify-between gap-14">
             <div class="relative">
               <input type="text" id="DATA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="DATA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
             </div>
             <div class="relative">
               <input type="text" id="UTENTE_PRATICA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="UTENTE/PRATICA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
               <input type="text" id="STATO_PRATICA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="STATO PRATICA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -185,47 +181,47 @@
           <div class="grid grid-cols-2 gap-2.5 2xl:gap-4">
             <div class="relative space-y-1">
               <label for="Denominazione" class="block text-[15px] text-dark pl-3">Denominazione</label>
-              <input type="text" id="Denominazione"
+              <input type="text" id="Denominazione" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Rag. Sociale" class="block text-[15px] text-dark pl-3">Rag. Sociale</label>
-              <input type="text" id="Rag. Sociale"
+              <input type="text" id="Rag. Sociale" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Indirizzo" class="block text-[15px] text-dark pl-3">Indirizzo</label>
-              <input type="text" id="Indirizzo"
+              <input type="text" id="Indirizzo" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="P.IVA" class="block text-[15px] text-dark pl-3">P.IVA</label>
-              <input type="text" id="P.IVA"
+              <input type="text" id="P.IVA" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
-              <label for="EMAIl" class="block text-[15px] text-dark pl-3">EMAIl</label>
-              <input type="text" id="EMAIl"
+              <label for="EMAIl" class="block text-[15px] text-dark pl-3">Email</label>
+              <input type="email" id="EMAIl" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="PEC" class="block text-[15px] text-dark pl-3">PEC</label>
-              <input type="text" id="PEC"
+              <input type="email" id="PEC" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Telefono" class="block text-[15px] text-dark pl-3">Telefono</label>
-              <input type="text" id="Telefono"
+              <input type="text" id="Telefono" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Cellulare" class="block text-[15px] text-dark pl-3">Cellulare</label>
-              <input type="text" id="Cellulare"
+              <input type="text" id="Cellulare" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Cellulare1" class="block text-[15px] text-dark pl-3">Referente:</label>
-              <input type="text" id="Cellulare1"
+              <input type="text" id="Cellulare1" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="col-span-2 pt-6">
@@ -235,12 +231,12 @@
             </div>
             <div class="relative space-y-1 -mt-3">
               <label for="User" class="block text-[15px] text-dark pl-3">User:</label>
-              <input type="text" id="User"
+              <input type="text" id="User" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1 -mt-3">
               <label for="Password" class="block text-[15px] text-dark pl-3">Password:</label>
-              <input type="text" id="Password"
+              <input type="text" id="Password" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div id="saveAndUpdate" class="col-span-2 pt-4">
@@ -250,6 +246,7 @@
             </div>
           </div>
         </form>
+
       </div>
     </div>
   </div>
@@ -380,7 +377,44 @@
         });
       }
 
-      saveAndUpdateButton.addEventListener('click', function () {
+      saveAndUpdateButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const requiredFields = [
+          'Denominazione', 'Rag. Sociale', 'Indirizzo', 'P.IVA', 'EMAIl',
+          'PEC', 'Telefono', 'Cellulare', 'Cellulare1', 'User', 'Password'
+        ];
+
+        let isValid = true;
+        let errorMessage = '';
+
+        // Check if all required fields are filled
+        requiredFields.forEach(field => {
+          const input = document.getElementById(field);
+          if (!input.value.trim()) {
+            isValid = false;
+            input.classList.add('border-red-500'); // Highlight the invalid fields
+          } else {
+            input.classList.remove('border-red-500');
+          }
+        });
+
+        // Check if email fields are valid
+        const emailField = document.getElementById('EMAIl');
+        const pecField = document.getElementById('PEC');
+        if (!emailField.checkValidity()) {
+          isValid = false;
+          errorMessage += 'Please enter a valid email address.\n';
+          emailField.classList.add('border-red-500');
+        } else {
+          emailField.classList.remove('border-red-500');
+        }
+
+        if (!isValid) {
+          alert(errorMessage || 'Please fill in all required fields.');
+          return;
+        }
+
         const denomination = document.getElementById('Denominazione').value;
         const corporateName = document.getElementById('Rag. Sociale').value;
         const address = document.getElementById('Indirizzo').value;
@@ -392,6 +426,7 @@
         const contact_person_user = document.getElementById('Cellulare1').value;
         const contact_person_username = document.getElementById('User').value;
         const contact_person_password = document.getElementById('Password').value;
+
         const partner = {
           denomination: denomination,
           social_rag: corporateName,
@@ -422,27 +457,15 @@
               fetchPartners();
               // Close the modal and clear the form
               document.getElementById('modalPopup').style.display = 'none';
-              document.getElementById('Denominazione').value = '';
-              document.getElementById('Rag. Sociale').value = '';
-              document.getElementById('Indirizzo').value = '';
-              document.getElementById('P.IVA').value = '';
-              document.getElementById('EMAIl').value = '';
-              document.getElementById('PEC').value = '';
-              document.getElementById('Telefono').value = '';
-              document.getElementById('Cellulare').value = '';
-              document.getElementById('User').value = '';
-              document.getElementById('Password').value = '';
+              requiredFields.forEach(field => document.getElementById(field).value = '');
             } else {
               alert('Server error');
             }
           })
           .catch(error => {
             console.error('Error:', error);
-            displayPartners(currentPage);
             alert('Server error');
           });
-
-
       });
     });
   </script>

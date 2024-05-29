@@ -13,59 +13,58 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <script>
-    const BASE_URL = 'http://54.221.153.188:8080/api';
+    const BASE_URL = 'http://localhost:8080/api';
   </script>
 </head>
 
 <body class="font-nunito text-[15px]">
   <div class="">
-    <aside class="w-[140px] fixed top-0 left-0 bottom-0 bg-dark shrink-0">
+    <aside>
       <a href="dashboard.html" class="flex flex-col justify-center items-center pt-12">
-        <h3 class="text-[30px] leading-none font-semibold text-center text-white">
-          Ge.F.A
-        </h3>
-        <p class="text-[7px] text-white">Gestione Finanza Agevolata</p>
+        <h3>Ge.F.A</h3>
+        <p>Gestione Finanza Agevolata</p>
       </a>
-      <div class="mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
-        <ul class="grid gap-12">
+      <div class="menu mt-32 flex justify-center max-h-[calc(100dvh-250px)] overflow-y-auto">
+        <ul>
           <li>
             <a href="users.html">
-              <img class="size-[32px]" src="./images/user.svg" alt="user" />
+              <img src="./images/user.svg" alt="user" />
             </a>
           </li>
           <li>
             <a href="announcements.html">
-              <img class="size-[32px]" src="./images/time-left.svg" alt="time-left" />
+              <img src="./images/time-left.svg" alt="time-left" />
             </a>
           </li>
           <li>
             <a href="application.html">
-              <img class="size-[32px]" src="./images/check.svg" alt="check" />
+              <img src="./images/check.svg" alt="check" />
             </a>
           </li>
           <li>
             <a href="delivery.html">
-              <img class="size-[32px]" src="./images/euro.svg" alt="euro" />
+              <img src="./images/euro.svg" alt="euro" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img class="size-[32px]" src="./images/fingerprint.svg" alt="fingerprint" />
+              <img src="./images/fingerprint.svg" alt="fingerprint" />
             </a>
           </li>
           <li>
             <a href="patners.html">
-              <img class="size-[32px]" src="./images/users.svg" alt="users" />
+              <img src="./images/users.svg" alt="users" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img class="size-[32px]" src="./images/automatic-doors.svg" alt="automatic-doors" />
+              <img src="./images/automatic-doors.svg" alt="automatic-doors" />
             </a>
           </li>
         </ul>
       </div>
     </aside>
+
     <div class="ml-[140px]">
       <header class="bg-primary py-4 pl-28">
         <div class="max-w-[1340px] flex justify-between items-center">
@@ -94,8 +93,7 @@
           <div class="grid grid-cols-6 gap-6">
             <div class="relative">
               <input type="text" id="SETTORE"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="SETTORE" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -106,8 +104,7 @@
             </div>
             <div class="relative">
               <input type="text" id="REGIONE"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="REGIONE" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -118,8 +115,7 @@
             </div>
             <div class="relative">
               <input type="text" id="SOGGETTO"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="SOGGETTO" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -130,8 +126,7 @@
             </div>
             <div class="relative">
               <input type="text" id="TIPO SPESA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="TIPO SPESA" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -142,8 +137,7 @@
             </div>
             <div class="relative">
               <input type="text" id="AGEVOLAZIONE"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2"
-                placeholder="AGEVOLAZIONE" />
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -224,45 +218,38 @@
           <div class="grid grid-cols-2 gap-2.5 2xl:gap-4">
             <div class="relative space-y-1 col-span-2">
               <label for="Nome bando" class="block text-[15px] text-dark pl-3">Nome bando</label>
-              <input type="text" id="Nome bando"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="Smart & Start" />
+              <input type="text" id="Nome bando" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Data apertura" class="block text-[15px] text-dark pl-3">Data apertura</label>
-              <input type="text" id="Data apertura"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="01/01/2023" />
+              <input type="date" id="Data apertura" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="chiusura" class="block text-[15px] text-dark pl-3">Data chiusura (se prevista)</label>
-              <input type="text" id="chiusura"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="01/01/2023" />
+              <input type="date" id="chiusura" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Regione" class="block text-[15px] text-dark pl-3">Regione</label>
-              <input type="text" id="Regione"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="Scegli Regione" />
+              <input type="text" id="Regione" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Soggetti ammessi" class="block text-[15px] text-dark pl-3">Soggetti ammessi</label>
-              <input type="text" id="Soggetti ammessi"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="Scegli soggetti ammissibili" />
+              <input type="text" id="Soggetti ammessi" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Tipo di spesa" class="block text-[15px] text-dark pl-3">Tipo di spesa</label>
-              <input type="text" id="Tipo di spesa"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="Scegli tipo di spesa finanziata" />
+              <input type="text" id="Tipo di spesa" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="Agevolazione" class="block text-[15px] text-dark pl-3">Agevolazione</label>
-              <input type="text" id="Agevolazione"
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"
-                placeholder="Scegli tipo di agevolazione" />
+              <input type="text" id="Agevolazione" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
           </div>
           <div class="pt-5">
@@ -271,7 +258,7 @@
                 Imposta intervalli di comunicazione scadenza:
               </h4>
               <p class="text-xs text-black">
-                Da questa area è possibile impostare la regoalrità dell’invio
+                Da questa area è possibile impostare la regolarità dell’invio
                 degli avvisi di scadenza agli utenti partecipanti al bando.
               </p>
             </div>
@@ -284,10 +271,6 @@
                 <input type="checkbox" id="prima1" class="size-5" />
                 <label for="prima1" class="text-block text-[13px] text-black">30 gg. prima della scadenza</label>
               </div>
-              <!-- <div class="flex gap-2 items-center">
-                <input type="checkbox" id="dellas " class="size-5" />
-                <label for="della " class="text-block text-[13px] text-black">30 gg. prima della scadenza</label>
-              </div> -->
               <div class="flex gap-2 items-center">
                 <input type="checkbox" id="scadenza" class="size-5" />
                 <label for="scadenza" class="text-block text-[13px] text-black">15 gg. prima della scadenza</label>
@@ -298,17 +281,18 @@
               </div>
             </div>
           </div>
-          <div id="closeModal" class="flex justify-end gap-4 2xl:pt-5">
-            <button type="button"
+          <div class="flex justify-end gap-4 2xl:pt-5">
+            <button type="button" id="closeModal"
               class="px-10 py-2.5 w-[200px] text-center rounded-lg border border-primary text-primary uppercase bg-brand-gray-50">
               ANNULLA
             </button>
-            <button id="saveAndUpdate" type="button"
+            <button id="saveAndUpdate" type="submit"
               class="uppercase px-5 py-2.5 w-[200px] text-center text-white bg-primary rounded-lg hover:bg-opacity-80 transition-all">
               SALVA
             </button>
           </div>
         </form>
+
       </div>
     </div>
   </div>
@@ -420,7 +404,7 @@
           var newRow = tableBody.insertRow();
           newRow.innerHTML = `
               <td class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
-                  <p class="text-sm px-1 text-white text-center py-1 w-[160px] bg-brand-green rounded">${announcement.closing_date}</p>
+                  <p class="text-sm px-1 text-white text-center py-1 w-[160px] bg-brand-green rounded">${new Date(announcement.closing_date).toLocaleDateString()}</p>
               </td>
               <td class="first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl">
                   ${announcement.region}
@@ -449,16 +433,59 @@
         });
       }
 
-      saveAndUpdateButton.addEventListener('click', function () {
+      saveAndUpdateButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const requiredFields = [
+          'Nome bando', 'Data apertura', 'chiusura', 'Regione', 'Soggetti ammessi',
+          'Tipo di spesa', 'Agevolazione'
+        ];
+
+        let isValid = true;
+        let errorMessage = '';
+
+        // Check if all required fields are filled
+        requiredFields.forEach(field => {
+          const input = document.getElementById(field);
+          if (!input.value.trim()) {
+            isValid = false;
+            input.classList.add('border-red-500'); // Highlight the invalid fields
+          } else {
+            input.classList.remove('border-red-500');
+          }
+        });
+
+        // Validate opening date and closing date
+        const today = new Date().setHours(0, 0, 0, 0); // Get today's date with time set to 00:00:00
+        const openingDate = new Date(document.getElementById('Data apertura').value);
+        const closingDate = new Date(document.getElementById('chiusura').value);
+
+        if (openingDate <= today) {
+          isValid = false;
+          errorMessage += 'Opening date must be greater than today.\n';
+          document.getElementById('Data apertura').classList.add('border-red-500');
+        } else {
+          document.getElementById('Data apertura').classList.remove('border-red-500');
+        }
+
+        if (closingDate <= openingDate) {
+          isValid = false;
+          errorMessage += 'Closing date must be greater than opening date.\n';
+          document.getElementById('chiusura').classList.add('border-red-500');
+        } else {
+          document.getElementById('chiusura').classList.remove('border-red-500');
+        }
+
+        if (!isValid) {
+          alert(errorMessage || 'Please fill in all required fields.');
+          return;
+        }
+
         const announcementName = document.getElementById('Nome bando').value;
-        const openingDate = document.getElementById('Data apertura').value;
-        const closingDate = document.getElementById('chiusura').value;
         const region = document.getElementById('Regione').value;
         const admittedSubjects = document.getElementById('Soggetti ammessi').value;
         const expenseType = document.getElementById('Tipo di spesa').value;
         const benefitType = document.getElementById('Agevolazione').value;
-        // console.log("document.getElementById('prima')", document.getElementById('prima'))
-
         const sixtyDaysBefore = document.getElementById('prima').checked;
         const thirtyDaysBefore = document.getElementById('prima1').checked;
         const fifteenDaysBefore = document.getElementById('scadenza').checked;
@@ -466,9 +493,9 @@
 
         const announcement = {
           name: announcementName,
-          opening_date: new Date(openingDate),
-          closing_date: new Date(closingDate),
-          deadline_date_time: new Date(closingDate), // Assuming deadline is same as closing date
+          opening_date: openingDate,
+          closing_date: closingDate,
+          deadline_date_time: closingDate, // Assuming deadline is same as closing date
           region: region,
           subjects: admittedSubjects,
           expenditure_type: expenseType,
@@ -479,7 +506,7 @@
             "30_days_before_deadline": all ? true : thirtyDaysBefore,
             "15_days_before_deadline": all ? true : fifteenDaysBefore,
           }
-        }
+        };
 
         fetch(`${BASE_URL}/announcements`, {
           method: 'POST',
@@ -493,16 +520,9 @@
               console.log('Announcement created successfully');
               currentPage = 1;
               fetchAnnouncements();
-              document.getElementById('Nome bando').value = '';
-              document.getElementById('Data apertura').value = '';
-              document.getElementById('chiusura').value = '';
-              document.getElementById('Regione').value = '';
-              document.getElementById('Soggetti ammessi').value = '';
-              document.getElementById('Tipo di spesa').value = '';
-              document.getElementById('Agevolazione').value = '';
+              requiredFields.forEach(field => document.getElementById(field).value = '');
               document.querySelectorAll('[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
-
-
+              document.getElementById('modalPopup').style.display = 'none';
             } else {
               alert('Server error');
             }
@@ -511,10 +531,6 @@
             console.error('Error:', error);
             alert('Server error');
           });
-
-
-        document.getElementById('modalPopup').style.display = 'none';
-        // filterTable();
       });
     });
   </script>
