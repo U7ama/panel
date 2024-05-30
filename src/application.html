@@ -70,9 +70,7 @@
         <div class="max-w-[1340px] flex justify-between items-center">
           <h2 class="text-[60px] font-semibold text-white">Stato domande</h2>
           <div class="flex items-center gap-32">
-            <p class="text-white text-[15px]">
-              Lun. 09 Gennaio 2023 | ora: 18,30
-            </p>
+            <p class="text-white text-[15px]" id="datetime"></p>
             <div class="flex gap-8 items-center">
               <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p>
               <button type="button">
@@ -92,17 +90,17 @@
           </div>
           <div class="grid grid-cols-4 justify-between gap-14">
             <div class="relative">
-              <input type="text" id="DATA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
+              <input type="text" id="DATA" placeholder="DATA" class=" w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80
+                focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text" id="UTENTE_PRATICA"
+              <input type="text" id="UTENTE_PRATICA" placeholder="UTENTE/PRATICA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text" id="STATO_PRATICA"
+              <input type="text" id="STATO_PRATICA" placeholder="STATO PRATICA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -470,7 +468,25 @@
       applicaButton.addEventListener('click', filterTable);
     });
   </script>
+  <script>
+    function updateDateTime() {
+      const options = {
+        weekday: 'long',
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        // hour: '2-digit',
+        // minute: '2-digit',
+        // second: '2-digit'
+      };
+      const now = new Date();
+      const formattedDateTime = now.toLocaleDateString('it-IT', options).replace(/, /g, ' | ora: ');
+      document.getElementById('datetime').textContent = formattedDateTime;
+    }
 
+    setInterval(updateDateTime, 1000); // Update every second
+    updateDateTime(); // Initial call to display the date and time immediately
+  </script>
 
 </body>
 

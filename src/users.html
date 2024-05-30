@@ -70,9 +70,7 @@
         <div class="max-w-[1340px] flex justify-between items-center">
           <h2 class="text-[60px] font-semibold text-white">Users</h2>
           <div class="flex items-center gap-32">
-            <p class="text-white text-[15px]">
-              Lun. 09 Gennaio 2023 | ora: 18,30
-            </p>
+            <p class="text-white text-[15px]" id="datetime"></p>
             <div class="flex gap-8 items-center">
               <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p>
               <button type="button">
@@ -92,12 +90,12 @@
           </div>
           <div class="grid grid-cols-4 gap-8">
             <div class="relative">
-              <input type="text" id="SOGGETTO"
+              <input type="text" id="SOGGETTO" placeholder="PRATICA/NOME"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text" id="PAGAMENTI"
+              <input type="text" id="PAGAMENTI" placeholder="STATO PAGAMENTI"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -108,7 +106,7 @@
               </div>
             </div>
             <div class="relative">
-              <input type="text" id="ASSEGNAZIONE"
+              <input type="text" id="ASSEGNAZIONE" placeholder="ASSEGNAZIONE"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -298,7 +296,7 @@
     <div class="max-w-[738px] mx-auto bg-white rounded-lg border border-brand-gray-700 mt-8 2xl:mt-14">
       <div class="w-full relative h-full p-8 2xl:p-14 space-y-6">
         <h2 class="text-[36px] leading-none font-bold text-black">Assegnazione pratica</h2>
-        <form action="" class="space-y-3 2xl:space-y-6">
+        <form action="" id="assignPartnerForm" class="space-y-3 2xl:space-y-6">
           <div class="grid grid-cols-2 gap-2.5 2xl:gap-4 pb-8">
             <div class="relative space-y-1">
               <label for="nPratica" class="block text-[15px] text-dark pl-3">N. Pratica</label>
@@ -315,7 +313,7 @@
             <h3 class="text-[26px] font-bold text-black">Assegna a:</h3>
             <div class="relative space-y-1 w-full">
               <label for="scegliPartner" class="block text-[15px] text-dark pl-3">Scegli partner:</label>
-              <select id="scegliPartner"
+              <select id="scegliPartner" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700">
                 <option value="" disabled selected>Choose a partner</option>
               </select>
@@ -338,16 +336,16 @@
     <div class="max-w-[738px] mx-auto bg-white rounded-lg border border-brand-gray-700 mt-8 2xl:mt-14">
       <div class="w-full relative h-full p-8 2xl:p-14 space-y-6">
         <h2 class="text-[36px] leading-none font-bold text-black">Stato pagamenti utente</h2>
-        <form action="" class="space-y-3 2xl:space-y-6">
+        <form action="" id="paymentForm" class="space-y-3 2xl:space-y-6">
           <div class="grid grid-cols-2 gap-2.5 2xl:gap-4 pb-8">
             <div class="relative space-y-1">
               <label for="paymentNPratica" class="block text-[15px] text-dark pl-3">N. Pratica</label>
-              <input id="paymentNPratica" type="text"
+              <input id="paymentNPratica" type="text" readonly
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
             <div class="relative space-y-1">
               <label for="paymentCreataIl" class="block text-[15px] text-dark pl-3">Creata il</label>
-              <input id="paymentCreataIl" type="text"
+              <input id="paymentCreataIl" type="text" readonly
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
           </div>
@@ -356,12 +354,12 @@
             <div class="flex gap-5">
               <div class="relative space-y-1 w-[245px] shrink-0">
                 <label for="Totale dovuto" class="block text-[15px] text-dark pl-3">Totale dovuto</label>
-                <input type="text" id="Totale dovuto"
+                <input type="text" id="Totale dovuto" required
                   class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
               </div>
               <div class="relative space-y-1 w-[245px] shrink-0">
                 <label for="Totale versato" class="block text-[15px] text-dark pl-3">Totale versato</label>
-                <input type="text" id="Totale versato"
+                <input type="text" id="Totale versato" required
                   class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
               </div>
             </div>
@@ -372,12 +370,12 @@
               <div class="relative space-y-1 w-[245px] shrink-0">
                 <label for="Importo versamento in euro" class="block text-[15px] text-dark pl-3">Importo versamento in
                   euro</label>
-                <input type="text" id="Importo versamento in euro"
+                <input type="text" id="Importo versamento in euro" required
                   class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
               </div>
               <div class="relative space-y-1 w-[245px] shrink-0">
                 <label for="Data versamento" class="block text-[15px] text-dark pl-3">Data versamento</label>
-                <input type="text" id="Data versamento"
+                <input type="text" id="Data versamento" required
                   class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
               </div>
               <button type="button"
@@ -396,6 +394,99 @@
     </div>
   </div>
 
+  <div id="userInfoModal" class="fixed inset-0 z-50 w-full h-full bg-black/40 overflow-y-auto py-4"
+    style="display: none;">
+    <div class="max-w-[738px] mx-auto bg-white rounded-lg border border-brand-gray-700 mt-8 2xl:mt-14">
+      <div class="w-full relative h-full p-8 2xl:p-14 space-y-6">
+        <h2 class="text-[36px] leading-none font-bold text-black">
+          Contesto dell'utente
+        </h2>
+        <form id="userForm" class="space-y-3 2xl:space-y-6">
+          <div class="grid grid-cols-2 gap-2.5 2xl:gap-4">
+            <div class="relative space-y-1">
+              <label for="userName" class="block text-[15px] text-dark pl-3">Nome</label>
+              <input type="text" id="userName" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userSurname" class="block text-[15px] text-dark pl-3">Cognome</label>
+              <input type="text" id="userSurname" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userPlaceOfBirth" class="block text-[15px] text-dark pl-3">Luogo di Nascita</label>
+              <input type="text" id="userPlaceOfBirth" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userProv" class="block text-[15px] text-dark pl-3">Provincia</label>
+              <input type="text" id="userProv" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userDOB" class="block text-[15px] text-dark pl-3">Data di Nascita</label>
+              <input id="userDOB" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userTaxCode" class="block text-[15px] text-dark pl-3">Codice Fiscale</label>
+              <input type="text" id="userTaxCode" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userAddress" class="block text-[15px] text-dark pl-3">Indirizzo</label>
+              <input type="text" id="userAddress" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userMunicipality" class="block text-[15px] text-dark pl-3">Comune di Residenza</label>
+              <input type="text" id="userMunicipality" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userProvRes" class="block text-[15px] text-dark pl-3">Provincia di Residenza</label>
+              <input type="text" id="userProvRes" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userCAP" class="block text-[15px] text-dark pl-3">CAP</label>
+              <input type="text" id="userCAP" required
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userPracticeNumber" class="block text-[15px] text-dark pl-3">Numero di Pratica</label>
+              <input type="text" id="userPracticeNumber" readonly
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userCreatedOn" class="block text-[15px] text-dark pl-3">Creato Il</label>
+              <input type="date" id="userCreatedOn" readonly
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userPracticeState" class="block text-[15px] text-dark pl-3">Stato della Pratica</label>
+              <input type="text" id="userPracticeState" readonly
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+            <div class="relative space-y-1">
+              <label for="userUpdatedTo" class="block text-[15px] text-dark pl-3">Aggiornato Al</label>
+              <input type="date" id="userUpdatedTo" readonly
+                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            </div>
+          </div>
+          <div class="flex justify-end gap-4 2xl:pt-5">
+            <button type="button" id="closeUserInfoModal"
+              class="px-10 py-2.5 rounded-lg border border-primary text-primary uppercase bg-brand-gray-50">Chiudi</button>
+            <a id="downloadDocumentButton" target="_blank"
+              class="uppercase px-5 py-2.5 text-white bg-primary rounded-lg hover:bg-opacity-80 transition-all">
+              APRI DOCUMENTO
+            </a>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -522,11 +613,11 @@
               // requiredFields.forEach(field => document.getElementById(field).value = '');
               console.log(response.data)
               if (response.data && response.data) {
-                console.log(response.data.n_practice)
-                document.getElementById('N. Pratica').value = response.data.n_practice;
-                document.getElementById('Creata il').value = new Date(response.data.created_on).toISOString().split('T')[0];
-                document.getElementById('Stato pratica').value = response.data.practical_state;
-                document.getElementById('Aggiornata al').value = new Date(response.data.updatedAt).toISOString().split('T')[0];
+                // console.log(response.data.n_practice)
+                document.getElementById('N. Pratica').value = response?.data?.n_practice;
+                document.getElementById('Creata il').value = new Date(response?.data?.created_on).toISOString().split('T')[0];
+                document.getElementById('Stato pratica').value = response?.data?.practical_state;
+                document.getElementById('Aggiornata al').value = new Date(response?.data?.updatedAt).toISOString().split('T')[0];
               }
               // document.getElementById('modalPopup').style.display = 'none';
               // document.querySelectorAll('[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
@@ -566,6 +657,25 @@
         const endIndex = startIndex + PAGE_SIZE;
         const usersToShow = userData.slice(startIndex, endIndex);
 
+
+        function validateForm(formId) {
+          const form = document.getElementById(formId);
+          const inputs = form.querySelectorAll('input, select');
+          let isValid = true;
+
+          inputs.forEach(input => {
+            if (input.hasAttribute('required') && !input.value.trim()) {
+              input.classList.add('border-red-500'); // Add red border for invalid fields
+              isValid = false;
+            } else {
+              input.classList.remove('border-red-500'); // Remove red border for valid fields
+            }
+          });
+
+          return isValid;
+        }
+
+
         const table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
         table.innerHTML = '';
 
@@ -575,7 +685,7 @@
 
           const cell1 = newRow.insertCell(0);
           cell1.className = cellClasses;
-          cell1.innerHTML = user ? user.n_practice : 'N/A';
+          cell1.innerHTML = user ? user?.n_practice : 'N/A';
 
           const cell2 = newRow.insertCell(1);
           cell2.className = cellClasses;
@@ -632,12 +742,11 @@
           const cell7 = newRow.insertCell(6);
           cell7.className = cellClasses;
           cell7.innerHTML = `<div class="flex gap-4 items-center">
-                             <a href=${user.doc_url} ref="noopener noreferrer" target="_blank"
-                               class="size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all">
-                               <figure>
-                                 <img src="./images/eye.svg" alt="eye.svg" />
-                               </figure>
-                             </a>
+                                <button type="button" class="openUserInfoModal size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all" data-index="${startIndex + index}">
+                                   <figure>
+                                      <img src="./images/eye.svg" alt="info.svg" />
+                                    </figure>
+                                 </button>
                              <button type="button" class="openPaymentModal size-7 flex justify-center items-center rounded-full bg-brand-blue hover:bg-opacity-80 transition-all" data-index="${startIndex + index}">
                                <figure>
                                  <img src="./images/wallet.svg" alt="wallet.svg" />
@@ -662,8 +771,8 @@
             const index = button.getAttribute('data-index');
             const selectedUser = userData[index];
 
-            document.getElementById('nPratica').value = selectedUser.n_practice;
-            document.getElementById('creataIl').value = new Date(selectedUser.created_on).toLocaleDateString();
+            document.getElementById('nPratica').value = selectedUser?.n_practice;
+            document.getElementById('creataIl').value = new Date(selectedUser?.created_on).toLocaleDateString();
 
             // Fetch partners and populate the dropdown
             fetch(`${BASE_URL}/partners`)
@@ -692,31 +801,36 @@
         });
 
         saveBtn.addEventListener('click', function () {
-          const index = document.querySelector('.openModalGroup[data-index]').getAttribute('data-index');
-          const selectedUser = userData[index];
-          const selectedPartnerId = document.getElementById('scegliPartner').value;
+          if (validateForm('assignPartnerForm')) {
+            const index = document.querySelector('.openModalGroup[data-index]').getAttribute('data-index');
+            const selectedUser = userData[index];
+            const selectedPartnerId = document.getElementById('scegliPartner').value;
 
-          selectedUser.assigned_To = {
-            partners: [selectedPartnerId],
-            updatedAt: new Date()
-          };
+            selectedUser.assigned_To = {
+              partners: [selectedPartnerId],
+              updatedAt: new Date()
+            };
 
-          console.log("selectedUser", selectedUser);
+            console.log("selectedUser", selectedUser);
 
-          // Save updated user data
-          fetch(`${BASE_URL}/users/${selectedUser._id}`, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(selectedUser)
-          })
-            .then(response => response.json())
-            .then(data => {
-              alert('Successfully assigned partner!');
-              modalGroup.style.display = 'none';
+            // Save updated user data
+            fetch(`${BASE_URL}/users/${selectedUser._id}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(selectedUser)
             })
-            .catch(error => console.error('Error updating user:', error));
+              .then(response => response.json())
+              .then(data => {
+                alert('Successfully assigned partner!');
+                modalGroup.style.display = 'none';
+              })
+              .catch(error => console.error('Error updating user:', error));
+          }
+          else {
+            alert('Please fill out all required fields.');
+          }
         });
 
         //Payment
@@ -726,13 +840,15 @@
         const closePaymentModal = document.getElementById('closePaymentModal');
         const savePaymentBtn = document.getElementById('savePayment');
 
+
+
         openPaymentBtns.forEach(button => {
           button.addEventListener('click', function () {
             const index = button.getAttribute('data-index');
             const selectedUser = userData[index];
 
-            document.getElementById('paymentNPratica').value = selectedUser.n_practice;
-            document.getElementById('paymentCreataIl').value = new Date(selectedUser.created_on).toLocaleDateString();
+            document.getElementById('paymentNPratica').value = selectedUser?.n_practice;
+            document.getElementById('paymentCreataIl').value = new Date(selectedUser?.created_on).toLocaleDateString();
 
             paymentModal.style.display = 'block';
           });
@@ -743,40 +859,94 @@
         });
 
         savePaymentBtn.addEventListener('click', function () {
-          const index = document.querySelector('.openPaymentModal[data-index]').getAttribute('data-index');
-          const selectedUser = userData[index];
-          const totalDue = document.getElementById('Totale dovuto').value;
-          const totalPaid = document.getElementById('Totale versato').value;
-          const paymentAmount = document.getElementById('Importo versamento in euro').value;
-          const paymentDate = document.getElementById('Data versamento').value;
+          if (validateForm('paymentForm')) {
+            const index = document.querySelector('.openPaymentModal[data-index]').getAttribute('data-index');
+            const selectedUser = userData[index];
+            const totalDue = document.getElementById('Totale dovuto').value;
+            const totalPaid = document.getElementById('Totale versato').value;
+            const paymentAmount = document.getElementById('Importo versamento in euro').value;
+            const paymentDate = document.getElementById('Data versamento').value;
 
-          selectedUser.payments = {
-            total_due: totalDue,
-            total_paid: totalPaid,
-            payment_history: [{
-              amount: paymentAmount,
-              date: paymentDate
-            }]
-          };
+            selectedUser.payments = {
+              total_due: totalDue,
+              total_paid: totalPaid,
+              payment_history: [{
+                amount: paymentAmount,
+                date: paymentDate
+              }]
+            };
 
-          console.log("selectedUser", selectedUser);
+            console.log("selectedUser", selectedUser);
 
-          fetch(`${BASE_URL}/users/${selectedUser._id}`, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(selectedUser)
-          })
-            .then(response => response.json())
-            .then(data => {
-              alert('User payment details updated successfully!');
-              paymentModal.style.display = 'none';
+            fetch(`${BASE_URL}/users/${selectedUser._id}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(selectedUser)
             })
-            .catch(error => console.error('Error updating user:', error));
+              .then(response => response.json())
+              .then(data => {
+                alert('User payment details updated successfully!');
+                paymentModal.style.display = 'none';
+              })
+              .catch(error => console.error('Error updating user:', error));
+          } else {
+            alert('Please fill out all required fields.');
+          }
         });
 
+
+        const openUserInfoBtns = document.querySelectorAll('.openUserInfoModal');
+        const userInfoModal = document.getElementById('userInfoModal');
+        const closeUserInfoModal = document.getElementById('closeUserInfoModal');
+
+        openUserInfoBtns.forEach(button => {
+          button.addEventListener('click', function () {
+            const index = button.getAttribute('data-index');
+            const selectedUser = userData[index];
+
+            if (!selectedUser) {
+              console.error('No user found at index:', index);
+              return;
+            }
+
+            console.log('Selected user:', selectedUser);
+
+            document.getElementById('userName').value = selectedUser?.name || '';
+            document.getElementById('userSurname').value = selectedUser?.surname || '';
+            document.getElementById('userPlaceOfBirth').value = selectedUser?.place_of_birth || '';
+            document.getElementById('userProv').value = selectedUser?.prov || '';
+            document.getElementById('userDOB').value = selectedUser?.date_of_birth ? selectedUser?.date_of_birth?.split('T')[0] : '';
+            document.getElementById('userTaxCode').value = selectedUser?.tax_code || '';
+            document.getElementById('userAddress').value = selectedUser?.address || '';
+            document.getElementById('userMunicipality').value = selectedUser?.municipality_of_residenza || '';
+            document.getElementById('userProvRes').value = selectedUser?.prov_residenza || '';
+            document.getElementById('userCAP').value = selectedUser?.cap || '';
+            document.getElementById('userPracticeNumber').value = selectedUser?.n_practice || '';
+            document.getElementById('userCreatedOn').value = selectedUser?.created_on ? selectedUser?.created_on?.split('T')[0] : '';
+            document.getElementById('userPracticeState').value = selectedUser?.practical_state || '';
+            document.getElementById('userUpdatedTo').value = selectedUser?.updated_to ? selectedUser?.updated_to?.split('T')[0] : '';
+            if (selectedUser.doc_url) {
+              downloadDocumentButton.href = selectedUser.doc_url;
+              downloadDocumentButton.style.display = 'block';
+            } else {
+              downloadDocumentButton.style.display = 'none';
+            }
+
+            userInfoModal.style.display = 'block';
+          });
+        });
+
+        closeUserInfoModal.addEventListener('click', function () {
+          userInfoModal.style.display = 'none';
+        });
+
+
         window.onclick = function (event) {
+          if (event.target == userInfoModal) {
+            userInfoModal.style.display = 'none';
+          }
           if (event.target == modalGroup) {
             modalGroup.style.display = 'none';
           }
@@ -857,7 +1027,25 @@
   </script>
 
 
+  <script>
+    function updateDateTime() {
+      const options = {
+        weekday: 'long',
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        // hour: '2-digit',
+        // minute: '2-digit',
+        // second: '2-digit'
+      };
+      const now = new Date();
+      const formattedDateTime = now.toLocaleDateString('it-IT', options).replace(/, /g, ' | ora: ');
+      document.getElementById('datetime').textContent = formattedDateTime;
+    }
 
+    setInterval(updateDateTime, 1000); // Update every second
+    updateDateTime(); // Initial call to display the date and time immediately
+  </script>
 </body>
 
 </html>
