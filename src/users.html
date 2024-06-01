@@ -72,7 +72,7 @@
           <div class="flex items-center gap-32">
             <p class="text-white text-[15px]" id="datetime"></p>
             <div class="flex gap-8 items-center">
-              <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p>
+              <!-- <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p> -->
               <button type="button">
                 <img src="./images/logout.svg" alt="logout.svg" />
               </button>
@@ -182,6 +182,9 @@
     </div>
   </div>
 
+  <div id="loader" class="absolute inset-0 z-60 flex items-center justify-center bg-black/50" style="display: none;">
+    <div class="loader"></div>
+  </div>
   <!--======================start coding for modal popup ====================================-->
 
   <div id="modalPopup" class="fixed inset-0 z-50 w-full h-full bg-black/40 overflow-y-auto py-4" style="display: none;">
@@ -248,10 +251,10 @@
             </div>
             <div class="relative space-y-1 col-span-2">
               <label for="documentUpload" class="block text-[15px] text-dark pl-3">Upload Document</label>
-              <input type="file" id="documentUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required
+              <input type="file" id="documentUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
-            <div class="relative space-y-1">
+            <!-- <div class="relative space-y-1">
               <label for="N. Pratica" class="block text-[15px] text-dark pl-3">N. Pratica</label>
               <input type="text" id="N. Pratica" readonly
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
@@ -260,10 +263,10 @@
               <label for="Creata il" class="block text-[15px] text-dark pl-3">Creata il</label>
               <input type="date" id="Creata il" readonly
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
-            </div>
+            </div> -->
 
           </div>
-          <div class="flex gap-5">
+          <!-- <div class="flex gap-5">
             <div class="relative space-y-1 w-[275px] shrink-0">
               <label for="Stato pratica" class="block text-[15px] text-dark pl-3">Stato pratica</label>
               <input type="text" id="Stato pratica" readonly
@@ -278,7 +281,7 @@
               <button type="button"
                 class="size-[30px] mb-1.5 shrink-0 rounded-full bg-primary flex justify-center items-center text-[32px] font-bold text-white">+</button>
             </div>
-          </div>
+          </div> -->
           <div class="flex justify-end gap-4 2xl:pt-5">
             <button type="button" id="closeModal"
               class="px-10 py-2.5 rounded-lg border border-primary text-primary uppercase bg-brand-gray-50">CHIUDI</button>
@@ -399,7 +402,7 @@
     <div class="max-w-[738px] mx-auto bg-white rounded-lg border border-brand-gray-700 mt-8 2xl:mt-14">
       <div class="w-full relative h-full p-8 2xl:p-14 space-y-6">
         <h2 class="text-[36px] leading-none font-bold text-black">
-          Contesto dell'utente
+          Stato utente/pratica
         </h2>
         <form id="userForm" class="space-y-3 2xl:space-y-6">
           <div class="grid grid-cols-2 gap-2.5 2xl:gap-4">
@@ -418,22 +421,25 @@
               <input type="text" id="userPlaceOfBirth" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
-            <div class="relative space-y-1">
-              <label for="userProv" class="block text-[15px] text-dark pl-3">Provincia</label>
-              <input type="text" id="userProv" required
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            <div class="grid grid-cols-2 gap-10 pl-8">
+              <div class="relative space-y-1">
+                <label for="userProv" class="block text-[15px] text-dark pl-3">Prov.</label>
+                <input type="text" id="userProv" required
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+              </div>
+              <div class="relative space-y-1">
+                <label for="userDOB" class="block text-[15px] text-dark pl-3">Data di Nascita</label>
+                <input id="userDOB" required
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+              </div>
             </div>
-            <div class="relative space-y-1">
-              <label for="userDOB" class="block text-[15px] text-dark pl-3">Data di Nascita</label>
-              <input id="userDOB" required
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
-            </div>
-            <div class="relative space-y-1">
+
+            <div class="relative space-y-1 col-span-2">
               <label for="userTaxCode" class="block text-[15px] text-dark pl-3">Codice Fiscale</label>
               <input type="text" id="userTaxCode" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
-            <div class="relative space-y-1">
+            <div class="relative space-y-1 col-span-2">
               <label for="userAddress" class="block text-[15px] text-dark pl-3">Indirizzo</label>
               <input type="text" id="userAddress" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
@@ -443,15 +449,17 @@
               <input type="text" id="userMunicipality" required
                 class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
             </div>
-            <div class="relative space-y-1">
-              <label for="userProvRes" class="block text-[15px] text-dark pl-3">Provincia di Residenza</label>
-              <input type="text" id="userProvRes" required
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
-            </div>
-            <div class="relative space-y-1">
-              <label for="userCAP" class="block text-[15px] text-dark pl-3">CAP</label>
-              <input type="text" id="userCAP" required
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+            <div class="grid grid-cols-2 gap-10 pl-8">
+              <div class="relative space-y-1">
+                <label for="userProvRes" class="block text-[15px] text-dark pl-3">Prov.</label>
+                <input type="text" id="userProvRes" required
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+              </div>
+              <div class="relative space-y-1">
+                <label for="userCAP" class="block text-[15px] text-dark pl-3">CAP</label>
+                <input type="text" id="userCAP" required
+                  class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
+              </div>
             </div>
             <div class="relative space-y-1">
               <label for="userPracticeNumber" class="block text-[15px] text-dark pl-3">Numero di Pratica</label>
@@ -479,7 +487,7 @@
               class="px-10 py-2.5 rounded-lg border border-primary text-primary uppercase bg-brand-gray-50">Chiudi</button>
             <a id="downloadDocumentButton" target="_blank"
               class="uppercase px-5 py-2.5 text-white bg-primary rounded-lg hover:bg-opacity-80 transition-all">
-              APRI DOCUMENTO
+              DOCUMENTI CARICATI
             </a>
           </div>
         </form>
@@ -493,6 +501,28 @@
       var modal = document.getElementById('modalPopup');
       var openBtn = document.getElementById('openModal');
       var closeBtn = document.getElementById('closeModal');
+
+
+      function showLoader() {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          loader.style.display = 'flex';
+          console.log("Loader shown");
+        } else {
+          console.error("Loader element not found");
+        }
+      }
+
+      function hideLoader() {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          loader.style.display = 'none';
+          console.log("Loader hidden");
+        } else {
+          console.error("Loader element not found");
+        }
+      }
+
 
       openBtn.addEventListener('click', function () {
         modal.style.display = 'block';
@@ -516,7 +546,7 @@
       const PAGE_SIZE = 5; // Number of records per page
       let currentPage = 1; // Current page number
       let userData = []; // Variable to store fetched user data
-
+      let filteredData = [];
 
       const paginationContainer = document.getElementById('pagination');
       const backButton = document.getElementById('backButton');
@@ -552,9 +582,11 @@
           const input = document.getElementById(field);
           if (!input.value.trim()) {
             isValid = false;
-            input.classList.add('border-red-500'); // Highlight the invalid fields
+            input.classList.remove('border-brand-gray-700');
+            input.classList.add('border-brand-red');
           } else {
-            input.classList.remove('border-red-500');
+            input.classList.add('border-brand-gray-700');
+            input.classList.remove('border-brand-red');
           }
         });
 
@@ -574,78 +606,84 @@
           municipality_of_residenza: document.getElementById('Comune di Residenza').value,
           prov_residenza: document.getElementById('Prov1').value,
           cap: document.getElementById('CAP').value,
-          // practice_details: {
-          //   n_practice: document.getElementById('N. Pratica').value,
-          //   created_on: document.getElementById('Creata il').value,
-          //   practical_state: document.getElementById('Stato pratica').value,
-          //   updated_to: document.getElementById('Aggiornata al').value,
-          // }
         };
 
-        // Process the file upload
+        // Process the file upload if a file is uploaded
         const fileInput = document.getElementById('documentUpload');
         const file = fileInput.files[0];
 
-        if (!file) {
-          alert('Please upload a document.');
-          return;
+        if (file) {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = async function () {
+            const base64Document = reader.result;
+            user.base64 = base64Document;
+
+            submitUser(user);
+          };
+
+          reader.onerror = function (error) {
+            console.error('Error reading file:', error);
+            hideLoader();
+            alert('Error reading file');
+          };
+        } else {
+          submitUser(user);
         }
-
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = async function () {
-          const base64Document = reader.result;
-
-          user.base64 = base64Document;
-
-          fetch(`${BASE_URL}/users`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-          }).then(response => response.json())
-            .then(response => {
-
-              console.log('User created successfully', response);
-              // currentPage = 1;
-              // fetchUsers();
-              // requiredFields.forEach(field => document.getElementById(field).value = '');
-              console.log(response.data)
-              if (response.data && response.data) {
-                // console.log(response.data.n_practice)
-                document.getElementById('N. Pratica').value = response?.data?.n_practice;
-                document.getElementById('Creata il').value = new Date(response?.data?.created_on).toISOString().split('T')[0];
-                document.getElementById('Stato pratica').value = response?.data?.practical_state;
-                document.getElementById('Aggiornata al').value = new Date(response?.data?.updatedAt).toISOString().split('T')[0];
-              }
-              // document.getElementById('modalPopup').style.display = 'none';
-              // document.querySelectorAll('[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
-              // fileInput.value = '';
-
-            })
-            .catch(error => {
-              console.error('Error:', error);
-              alert('Server error');
-            });
-        };
-
-        reader.onerror = function (error) {
-          console.error('Error reading file:', error);
-          alert('Error reading file');
-        };
       });
+
+      function submitUser(user) {
+        showLoader();
+
+        fetch(`${BASE_URL}/users`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(user)
+        }).then(response => response.json())
+          .then(response => {
+            hideLoader();
+            console.log('User created successfully', response);
+
+            const clearFields = [
+              'name', 'Balletta', 'Luogo di nascita', 'Prov', 'nascita', 'Codice Fiscale',
+              'Indirizzo', 'Comune di Residenza', 'Prov1', 'CAP'
+            ];
+            clearFields.forEach(field => document.getElementById(field).value = '');
+            // console.log(response.data);
+            // if (response.data && response.data) {
+            //   document.getElementById('N. Pratica').value = response?.data?.n_practice;
+            //   document.getElementById('Creata il').value = new Date(response?.data?.created_on).toISOString().split('T')[0];
+            //   document.getElementById('Stato pratica').value = response?.data?.practical_state;
+            //   document.getElementById('Aggiornata al').value = new Date(response?.data?.updatedAt).toISOString().split('T')[0];
+            // }
+            fetchUsers();
+            document.getElementById('modalPopup').style.display = 'none';
+            document.querySelectorAll('[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+            document.getElementById('documentUpload').value = '';
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            hideLoader();
+            alert('Server error');
+          });
+      }
+
 
 
       // Function to fetch users from the endpoint and display them
       function fetchUsers() {
+        showLoader();
         fetch(`${BASE_URL}/users`)
           .then(response => response.json())
           .then(data => {
             const sortedData = data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
             userData = sortedData;
+            filteredData = userData;
             updatePagination();
-            displayUsers(currentPage)
+            displayUsers(currentPage);
+            hideLoader();
           })
           .catch(error => {
             console.error('Error fetching users:', error);
@@ -655,7 +693,7 @@
       function displayUsers(page) {
         const startIndex = (page - 1) * PAGE_SIZE;
         const endIndex = startIndex + PAGE_SIZE;
-        const usersToShow = userData.slice(startIndex, endIndex);
+        const usersToShow = filteredData.slice(startIndex, endIndex);
 
 
         function validateForm(formId) {
@@ -681,6 +719,15 @@
 
         usersToShow.forEach((user, index) => {
           const newRow = table.insertRow();
+          let paymentStatusClass = 'bg-brand-red'; // Default to Red for Not Paid
+          let paymentStatusText = 'Not Paid';
+          if (user.payment_status === 'To Check') {
+            paymentStatusClass = 'bg-brand-yellow'; // Yellow for To Check
+            paymentStatusText = 'To Check';
+          } else if (user.payment_status === 'Paid') {
+            paymentStatusClass = 'bg-brand-green'; // Green for Paid
+            paymentStatusText = 'Paid';
+          }
           const cellClasses = 'first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl';
 
           const cell1 = newRow.insertCell(0);
@@ -689,9 +736,9 @@
 
           const cell2 = newRow.insertCell(1);
           cell2.className = cellClasses;
-          cell2.innerHTML = `<p class="text-sm px-3 text-white text-center py-1 w-[145px] bg-brand-green rounded">
-                             ${user.name} ${user.surname}
-                           </p>`;
+          cell2.innerHTML = `<p class="text-sm px-3 text-white text-center py-1 w-[145px] ${paymentStatusClass} rounded">
+                     ${user.name} ${user.surname}
+                   </p>`;
 
           const cell3 = newRow.insertCell(2);
           cell3.className = cellClasses;
@@ -707,23 +754,6 @@
 
           const cell6 = newRow.insertCell(5);
           cell6.className = cellClasses;
-
-
-          let paymentStatusClass = 'bg-brand-red'; // Default to Red for no payment
-          let paymentStatusText = 'Not Paid';
-          if (user.payments) {
-            const { total_due, total_paid, payment_history } = user.payments;
-            if (total_due === 0 && total_paid === 0 && payment_history.length === 0) {
-              paymentStatusClass = 'bg-brand-yellow'; // Yellow for partial payment
-              paymentStatusText = 'To Check';
-            } else if (total_paid > 0) {
-              paymentStatusClass = 'bg-brand-green'; // Green for full payment
-              paymentStatusText = 'Paid';
-            } else if (total_paid > 0 && total_paid < total_due) {
-              paymentStatusClass = 'bg-brand-red'; // Red for no payment
-              paymentStatusText = 'Not Paid';
-            }
-          }
 
           cell6.innerHTML = `<div class="flex gap-7 items-center">
                              <div class="flex gap-2 items-center">
@@ -812,7 +842,7 @@
             };
 
             console.log("selectedUser", selectedUser);
-
+            showLoader();
             // Save updated user data
             fetch(`${BASE_URL}/users/${selectedUser._id}`, {
               method: 'PUT',
@@ -823,10 +853,15 @@
             })
               .then(response => response.json())
               .then(data => {
-                alert('Successfully assigned partner!');
+                // alert('Successfully assigned partner!');
+                hideLoader();
+                fetchUsers();
                 modalGroup.style.display = 'none';
               })
-              .catch(error => console.error('Error updating user:', error));
+              .catch(error => {
+                hideLoader();
+                console.error('Error updating user:', error)
+              });
           }
           else {
             alert('Please fill out all required fields.');
@@ -877,7 +912,7 @@
             };
 
             console.log("selectedUser", selectedUser);
-
+            showLoader();
             fetch(`${BASE_URL}/users/${selectedUser._id}`, {
               method: 'PUT',
               headers: {
@@ -887,10 +922,15 @@
             })
               .then(response => response.json())
               .then(data => {
-                alert('User payment details updated successfully!');
+                hideLoader();
+                fetchUsers();
+                // alert('User payment details updated successfully!');
                 paymentModal.style.display = 'none';
               })
-              .catch(error => console.error('Error updating user:', error));
+              .catch(error => {
+                hideLoader();
+                console.error('Error updating user:', error)
+              });
           } else {
             alert('Please fill out all required fields.');
           }
@@ -925,7 +965,7 @@
             document.getElementById('userCAP').value = selectedUser?.cap || '';
             document.getElementById('userPracticeNumber').value = selectedUser?.n_practice || '';
             document.getElementById('userCreatedOn').value = selectedUser?.created_on ? selectedUser?.created_on?.split('T')[0] : '';
-            document.getElementById('userPracticeState').value = selectedUser?.practical_state || '';
+            document.getElementById('userPracticeState').value = selectedUser?.payment_status || '';
             document.getElementById('userUpdatedTo').value = selectedUser?.updated_to ? selectedUser?.updated_to?.split('T')[0] : '';
             if (selectedUser.doc_url) {
               downloadDocumentButton.href = selectedUser.doc_url;
@@ -962,7 +1002,7 @@
       function updatePagination() {
         paginationContainer.innerHTML = ''; // Clear previous pagination links
 
-        const totalPages = Math.ceil(userData.length / PAGE_SIZE);
+        const totalPages = Math.ceil(filteredData.length / PAGE_SIZE);
 
         for (let i = 1; i <= totalPages; i++) {
           const li = document.createElement('li');
@@ -985,13 +1025,6 @@
           paginationContainer.appendChild(li);
         }
       }
-
-
-    });
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
       const SOGGETTOInput = document.getElementById('SOGGETTO');
       const PAGAMENTIInput = document.getElementById('PAGAMENTI');
       const nameInput = document.getElementById('ASSEGNAZIONE');
@@ -999,52 +1032,45 @@
 
       if (SOGGETTOInput && PAGAMENTIInput && nameInput && applicaButton) {
         function filterTable() {
-          const tableRows = document.querySelectorAll('#dataTable tbody tr');
           const soggettoText = SOGGETTOInput.value.toUpperCase();
           const pagamentiText = PAGAMENTIInput.value.toUpperCase();
           const assegnazioneText = nameInput.value.toUpperCase();
 
-          tableRows.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            const praticaCell = cells[0] ? cells[0].textContent.toUpperCase() : '';
-            const nomeCell = cells[1] ? cells[1].textContent.toUpperCase() : '';
-            const soggettoCell = cells[4] ? cells[4].textContent.toUpperCase() : '';
-            const pagamentiCell = cells[5] ? cells[5].textContent.toUpperCase() : '';
+          filteredData = userData.filter(user => {
+            const praticaText = user?.n_practice?.toUpperCase() || '';
+            const nomeText = `${user.name} ${user.surname}`.toUpperCase();
+            const soggettoTextAddress = user?.address?.toUpperCase() || '';
+            const pagamentiStatus = user?.payments ? (user.payments.total_due === 0 && user.payments.total_paid > 0 ? 'PAID' : 'NOT PAID').toUpperCase() : 'NOT PAID';
 
-            const isVisible = (praticaCell.includes(soggettoText) || nomeCell.includes(soggettoText)) &&
-              pagamentiCell.includes(pagamentiText) &&
-              soggettoCell.includes(assegnazioneText);
-
-            row.style.display = isVisible ? '' : 'none';
+            return (praticaText.includes(soggettoText) || nomeText.includes(soggettoText)) &&
+              pagamentiStatus.includes(pagamentiText) &&
+              soggettoTextAddress.includes(assegnazioneText);
           });
+
+          currentPage = 1; // Reset to first page after filtering
+          updatePagination();
+          displayUsers(currentPage);
         }
 
         applicaButton.addEventListener('click', filterTable);
       } else {
         console.error('One or more elements not found in the DOM.');
       }
+
     });
   </script>
 
-
   <script>
-    function updateDateTime() {
-      const options = {
-        weekday: 'long',
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-        // hour: '2-digit',
-        // minute: '2-digit',
-        // second: '2-digit'
-      };
-      const now = new Date();
-      const formattedDateTime = now.toLocaleDateString('it-IT', options).replace(/, /g, ' | ora: ');
-      document.getElementById('datetime').textContent = formattedDateTime;
+    // 
+    function formatDate() {
+      const date = new Date();
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      const formattedDate = date.toLocaleDateString('it-IT', options);
+      return formattedDate;
     }
 
-    setInterval(updateDateTime, 1000); // Update every second
-    updateDateTime(); // Initial call to display the date and time immediately
+
+    document.getElementById('datetime').innerText = formatDate();
   </script>
 </body>
 

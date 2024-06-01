@@ -72,7 +72,7 @@
           <div class="flex items-center gap-32">
             <p class="text-white text-[15px]" id="datetime"></p>
             <div class="flex gap-8 items-center">
-              <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p>
+              <!-- <p class="text-white text-[15px]">BENVENUTO: BOCCIA Luigi</p> -->
               <button type="button">
                 <img src="./images/logout.svg" alt="logout.svg" />
               </button>
@@ -90,14 +90,15 @@
           </div>
           <div class="grid grid-cols-4 justify-between gap-14">
             <div class="relative">
-              <input type="text" id="DATA" placeholder="DATA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
-              <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
-            </div>
-            <div class="relative">
-              <input type="text" id="UTENTE_PRATICA" placeholder="UTENTE/PRATICA"
+              <input type="text" id="DATA" placeholder="UTENTE/PRATICA"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
+            </div>
+            <div class="relative">
+              <input type="text" id="UTENTE_PRATICA" placeholder="DATA"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
+              <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
+
             </div>
             <div class="relative">
               <input type="text" id="STATO_PRATICA" placeholder="STATO PRATICA"
@@ -163,7 +164,9 @@
       </div>
     </div>
   </div>
-
+  <div id="loader" class="absolute inset-0 z-60 flex items-center justify-center bg-black/50" style="display: none;">
+    <div class="loader"></div>
+  </div>
   <!--======================start coding for modal popup ====================================-->
 
   <div id="modalPopup" style="display: none;" class="fixed inset-0 z-50 w-full h-full bg-black/40 overflow-y-auto py-4">
@@ -278,10 +281,30 @@
       const PAGE_SIZE = 5; // Number of records per page
       let currentPage = 1; // Current page number
       let partnerData = []; // Array to hold partner data
-
+      let filteredData = [];
       const paginationContainer = document.getElementById('pagination');
       const backButton = document.getElementById('backButton');
       const nextButton = document.getElementById('nextButton');
+
+      function showLoader() {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          loader.style.display = 'flex';
+          console.log("Loader shown");
+        } else {
+          console.error("Loader element not found");
+        }
+      }
+
+      function hideLoader() {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          loader.style.display = 'none';
+          console.log("Loader hidden");
+        } else {
+          console.error("Loader element not found");
+        }
+      }
 
       backButton.addEventListener('click', () => {
         if (currentPage > 1) {
@@ -303,13 +326,16 @@
       fetchPartners();
 
       function fetchPartners() {
+        showLoader();
         fetch(`${BASE_URL}/partners`)
           .then(response => response.json())
           .then(data => {
             const sortedData = data.data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
             partnerData = sortedData;
+            filteredData = sortedData;
             updatePagination();
             displayPartners(currentPage);
+            hideLoader();
           })
           .catch(error => {
             console.error('Error fetching partners:', error);
@@ -319,7 +345,7 @@
       function updatePagination() {
         paginationContainer.innerHTML = ''; // Clear previous pagination links
 
-        const totalPages = Math.ceil(partnerData.length / PAGE_SIZE);
+        const totalPages = Math.ceil(filteredData.length / PAGE_SIZE);
 
         for (let i = 1; i <= totalPages; i++) {
           const li = document.createElement('li');
@@ -346,7 +372,7 @@
       function displayPartners(page) {
         const startIndex = (page - 1) * PAGE_SIZE;
         const endIndex = startIndex + PAGE_SIZE;
-        const partnersToShow = partnerData.slice(startIndex, endIndex);
+        const partnersToShow = filteredData.slice(startIndex, endIndex);
 
         var tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
         tableBody.innerHTML = '';
@@ -391,9 +417,11 @@
           const input = document.getElementById(field);
           if (!input.value.trim()) {
             isValid = false;
-            input.classList.add('border-red-500'); // Highlight the invalid fields
+            input.classList.remove('border-brand-gray-700');
+            input.classList.add('border-brand-red');
           } else {
-            input.classList.remove('border-red-500');
+            input.classList.add('border-brand-gray-700');
+            input.classList.remove('border-brand-red');
           }
         });
 
@@ -440,7 +468,7 @@
             password: contact_person_password
           }
         };
-
+        showLoader();
         fetch(`${BASE_URL}/partners`, {
           method: 'POST',
           headers: {
@@ -450,6 +478,7 @@
         })
           .then(response => {
             if (response.ok) {
+              hideLoader();
               console.log('Partner created successfully');
               currentPage = 1;
               fetchPartners();
@@ -457,63 +486,56 @@
               document.getElementById('modalPopup').style.display = 'none';
               requiredFields.forEach(field => document.getElementById(field).value = '');
             } else {
+              hideLoader();
               alert('Server error');
             }
           })
           .catch(error => {
+            hideLoader();
             console.error('Error:', error);
             alert('Server error');
           });
       });
-    });
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
       const dataInput = document.getElementById('DATA');
       const utentePraticaInput = document.getElementById('UTENTE_PRATICA');
       const statoPraticaInput = document.getElementById('STATO_PRATICA');
       const applicaButton = document.getElementById('applicaButton');
 
       function filterTable() {
-        const tableRows = document.querySelectorAll('#dataTable tbody tr');
         const dataText = dataInput.value.toUpperCase();
         const utentePraticaText = utentePraticaInput.value.toUpperCase();
         const statoPraticaText = statoPraticaInput.value.toUpperCase();
 
-        tableRows.forEach(row => {
-          const cells = row.querySelectorAll('td');
-          const dataCell = cells[0] ? cells[0].textContent.toUpperCase() : '';
-          const utentePraticaCell = cells[1] ? cells[1].textContent.toUpperCase() : '';
-          const statoPraticaCell = cells[2] ? cells[2].textContent.toUpperCase() : '';
+        filteredData = partnerData.filter(partner => {
+          const dataCellText = partner.denomination.toUpperCase();
+          const utentePraticaCellText = new Date(partner.updatedAt).toLocaleDateString().toUpperCase();
+          const statoPraticaCellText = partner.pec.toUpperCase();
 
-          const isVisible = dataCell.includes(dataText) && utentePraticaCell.includes(utentePraticaText) &&
-            statoPraticaCell.includes(statoPraticaText);
-          row.style.display = isVisible ? '' : 'none';
+          return dataCellText.includes(dataText) &&
+            utentePraticaCellText.includes(utentePraticaText) &&
+            statoPraticaCellText.includes(statoPraticaText);
         });
+
+        currentPage = 1; // Reset to first page after filtering
+        updatePagination();
+        displayPartners(currentPage);
       }
 
       applicaButton.addEventListener('click', filterTable);
     });
   </script>
+
   <script>
-    function updateDateTime() {
-      const options = {
-        weekday: 'long',
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-        // hour: '2-digit',
-        // minute: '2-digit',
-        // second: '2-digit'
-      };
-      const now = new Date();
-      const formattedDateTime = now.toLocaleDateString('it-IT', options).replace(/, /g, ' | ora: ');
-      document.getElementById('datetime').textContent = formattedDateTime;
+    // 
+    function formatDate() {
+      const date = new Date();
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      const formattedDate = date.toLocaleDateString('it-IT', options);
+      return formattedDate;
     }
 
-    setInterval(updateDateTime, 1000); // Update every second
-    updateDateTime(); // Initial call to display the date and time immediately
+
+    document.getElementById('datetime').innerText = formatDate();
   </script>
 </body>
 
