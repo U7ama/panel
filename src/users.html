@@ -95,16 +95,16 @@
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text" id="PAGAMENTI" placeholder="STATO PAGAMENTI"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
-              <div class="absolute top-1/2 -translate-y-1/2 right-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="stroke-brand-gray-700/80">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </div>
+              <select id="PAGAMENTI"
+                class="w-full pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2">
+                <option value="">STATO PAGAMENTI</option>
+                <option value="Paid">Paid</option>
+                <option value="Not Paid">Not Paid</option>
+                <option value="To Check">To Check</option>
+              </select>
+
             </div>
+
             <div class="relative">
               <input type="text" id="ASSEGNAZIONE" placeholder="ASSEGNAZIONE"
                 class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
@@ -1033,17 +1033,17 @@
       if (SOGGETTOInput && PAGAMENTIInput && nameInput && applicaButton) {
         function filterTable() {
           const soggettoText = SOGGETTOInput.value.toUpperCase();
-          const pagamentiText = PAGAMENTIInput.value.toUpperCase();
+          const pagamentiText = PAGAMENTIInput.value; // Exact match for select dropdown
           const assegnazioneText = nameInput.value.toUpperCase();
 
           filteredData = userData.filter(user => {
             const praticaText = user?.n_practice?.toUpperCase() || '';
             const nomeText = `${user.name} ${user.surname}`.toUpperCase();
             const soggettoTextAddress = user?.address?.toUpperCase() || '';
-            const pagamentiStatus = user?.payments ? (user.payments.total_due === 0 && user.payments.total_paid > 0 ? 'PAID' : 'NOT PAID').toUpperCase() : 'NOT PAID';
+            const pagamentiStatus = user?.payment_status || '';
 
             return (praticaText.includes(soggettoText) || nomeText.includes(soggettoText)) &&
-              pagamentiStatus.includes(pagamentiText) &&
+              (pagamentiText === '' || pagamentiStatus === pagamentiText) &&
               soggettoTextAddress.includes(assegnazioneText);
           });
 
@@ -1051,6 +1051,8 @@
           updatePagination();
           displayUsers(currentPage);
         }
+
+
 
         applicaButton.addEventListener('click', filterTable);
       } else {

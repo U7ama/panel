@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Application Page</title>
+  <title>Dashboard Page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -68,7 +68,7 @@
     <div class="ml-[140px]">
       <header class="bg-primary py-4 pl-28">
         <div class="max-w-[1340px] flex justify-between items-center">
-          <h2 class="text-[60px] font-semibold text-white">Stato domande</h2>
+          <h2 class="text-[60px] font-semibold text-white">Stato domande </h2>
           <div class="flex items-center gap-32">
             <p class="text-white text-[15px]" id="datetime"></p>
             <div class="flex gap-8 items-center">
@@ -81,34 +81,39 @@
         </div>
       </header>
       <div class="min-h-[calc(100vh-125px)] max-h-[calc(100vh-125px)] overflow-y-auto flex pt-14 2xl:pt-20 pb-10">
-        <div class="max-w-full w-[1226px] mx-auto space-y-12">
-          <div class="flex justify-end">
+        <div class="max-w-full w-[1088px] mx-auto space-y-12">
+          <!-- <div class="flex justify-end">
             <button id="openModal" type="button"
               class="text-[15px] px-4 py-2 rounded-md bg-dark text-white font-medium">
               +AGGIUNGI
             </button>
-          </div>
-          <div class="grid grid-cols-4 justify-between gap-14">
+          </div> -->
+          <div class="grid grid-cols-4 gap-8">
             <div class="relative">
-              <input type="text" id="DATA" placeholder="DATA" class=" w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80
-                focus:ring-0 border border-brand-gray-700 py-2" />
-              <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/calendar.svg" alt="img" />
-            </div>
-            <div class="relative">
-              <input type="text" id="UTENTE_PRATICA" placeholder="UTENTE/PRATICA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
+              <input type="text" id="SOGGETTO" placeholder="PRATICA/NOME"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <img class="absolute top-1/2 -translate-y-1/2 right-5" src="./images/zoom-lens.svg" alt="img" />
             </div>
             <div class="relative">
-              <input type="text" id="STATO_PRATICA" placeholder="STATO PRATICA"
-                class="w-full placeholder:text-dark/50 pl-4 rounded-xl pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
+              <select id="PAGAMENTI"
+                class="w-full pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2">
+                <option value="">STATO PAGAMENTI</option>
+                <option value="Paid">Paid</option>
+                <option value="Not Paid">Not Paid</option>
+                <option value="To Check">To Check</option>
+              </select>
+
+            </div>
+            <div class="relative">
+              <!-- <input type="text" id="ASSEGNAZIONE" placeholder="ASSEGNAZIONE"
+                class="w-full placeholder:text-dark/50 pl-4 rounded-lg pr-6 focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700 py-2" />
               <div class="absolute top-1/2 -translate-y-1/2 right-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                   class="stroke-brand-gray-700/80">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-              </div>
+              </div> -->
             </div>
             <div class="relative flex justify-end">
               <button type="button" id="applicaButton"
@@ -118,26 +123,33 @@
             </div>
           </div>
           <div class="">
-            <table class="w-full text-[15px]" id="dataTable">
+            <table id="dataTable" class="w-full text-[15px]">
               <thead>
                 <tr>
-                  <th class="text-left w-80 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
-                    DATA
-                  </th>
-                  <th class="text-left w-64 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
-                    UTENTE
-                  </th>
-                  <th class="text-left w-64 first:pl-6 pl-2 text-[15px] text-dark">
+                  <th class="text-left w-40 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
                     PRATICA
                   </th>
-                  <th class="text-left w-64 first:pl-6 pl-2 text-[15px] text-dark">
-                    STATO
+                  <th class="text-left w-40 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    NOME
                   </th>
+                  <th class="text-left w-32 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    APERTURA
+                  </th>
+                  <th class="text-left w-32 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    SCADENZA
+                  </th>
+                  <th class="text-left w-40 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    SOGGETTO
+                  </th>
+                  <th class="text-left w-52 first:pl-6 pl-2 last:pl-6 text-[15px] text-dark">
+                    STATO PAGAMENTI
+                  </th>
+
                 </tr>
               </thead>
-              <tbody>
+              <tboday>
                 <tr></tr>
-              </tbody>
+              </tboday>
             </table>
           </div>
           <div class="flex justify-between items-center">
@@ -153,7 +165,7 @@
             <ul class="flex gap-1.5 items-center" id="pagination">
 
             </ul>
-            <button type="button" id="nextButton"
+            <button id="nextButton" type="button"
               class="flex bg-primary hover:bg-opacity-80 text-white border border-primary items-center px-3 py-2 rounded-md">
               <span>AVANTI</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -166,114 +178,14 @@
       </div>
     </div>
   </div>
-  <!--======================start coding for modal popup ====================================-->
+
   <div id="loader" class="absolute inset-0 z-60 flex items-center justify-center bg-black/50" style="display: none;">
     <div class="loader"></div>
   </div>
-  <div id="modalPopup" style="display: none;" class="fixed inset-0 z-50 w-full h-full bg-black/40 overflow-y-auto py-4">
-    <div class="max-w-[738px] mx-auto bg-white rounded-lg border border-brand-gray-700 mt-8 2xl:mt-14">
-      <div class="w-full relative h-full p-8 2xl:p-14 space-y-6">
-        <button id="closeModal" type="button" class="text-[36px] text-dark/80 absolute top-5 right-8 2xl:right-14">
-          x
-        </button>
 
-        <h2 class="text-[36px] leading-none font-bold text-black">
-          Aggiungi Bando
-        </h2>
-        <form action="" class="space-y-3 2xl:space-y-6">
-          <div class="grid grid-cols-2 gap-2.5 2xl:gap-4">
-            <div class="relative space-y-1">
-              <label for="Pratica" class="block text-[15px] text-dark pl-3">Pratica</label>
-              <input type="text" id="Pratica" required
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
-            </div>
-            <div class="relative space-y-1">
-              <label for="Utente" class="block text-[15px] text-dark pl-3">Utente</label>
-              <input type="text" id="Utente" required
-                class="w-full placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700" />
-            </div>
-            <div class="col-span-2 pt-2">
-              <button type="button" class="w-full py-1.5 px-3 rounded-md bg-dark text-white">
-                GUARDA PRATICA
-              </button>
-            </div>
-          </div>
-          <div class="pt-8 space-y-12 pl-5">
-            <div class="space-y-3">
-              <h4 class="font-semibold underline text-[15px]">
-                PROBLEMA DA SEGNALARE
-              </h4>
-              <div class="grid grid-cols-3 gap-4">
-                <div class="flex gap-3 items-center">
-                  <input type="radio" class="size-5 shrink-0" id="Illegibile" name="problem" required />
-                  <label for="Illegibile">Illegibile</label>
-                </div>
-                <div class="flex gap-3 items-center -ml-10">
-                  <input type="radio" class="size-5 shrink-0" id="apposta" name="problem" required />
-                  <label for="apposta">Firma Digitale non apposta</label>
-                </div>
-                <div class="flex gap-3 items-center">
-                  <input type="radio" class="size-5 shrink-0" id="sospeso" name="problem" required />
-                  <label for="sospeso">Pagamento sospeso</label>
-                </div>
-              </div>
-            </div>
-            <div class="relative space-y-1">
-              <label for="UTENTE" class="block text-[15px] text-dark pl-3">TESTO COMUNICAZIONE UTENTE</label>
-              <textarea name="UTENTE" id="UTENTE" cols="30" rows="8" required
-                class="w-full resize-none placeholder:text-dark/50 py-1.5 px-3 rounded-lg focus:outline-none text-dark/80 focus:ring-0 border border-brand-gray-700"></textarea>
-            </div>
-          </div>
-          <div class="flex justify-end gap-4 2xl:pt-5">
-            <button id="closeModal" type="button"
-              class="px-10 py-2.5 w-[125px] text-center rounded-lg border border-primary text-primary uppercase bg-brand-gray-50">
-              ANNULLA
-            </button>
-            <button id="saveAndUpdate" type="submit"
-              class="uppercase px-5 py-2.5 w-[125px] text-center text-white bg-primary rounded-lg hover:bg-opacity-80 transition-all">
-              SALVA
-            </button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var modal = document.getElementById('modalPopup');
-      var openBtn = document.getElementById('openModal');
-      var closeBtn = document.getElementById('closeModal');
-
-      openBtn.addEventListener('click', function () {
-        modal.style.display = 'block';
-      });
-
-      closeBtn.addEventListener('click', function () {
-        modal.style.display = 'none';
-      });
-
-
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = 'none';
-        }
-      };
-    });
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const saveAndUpdateButton = document.getElementById('saveAndUpdate');
-      const PAGE_SIZE = 5;
-      let currentPage = 1;
-      let applicationData = [];
-      let filteredData = [];
-      const paginationContainer = document.getElementById('pagination');
-      const backButton = document.getElementById('backButton');
-      const nextButton = document.getElementById('nextButton');
-
 
       function showLoader() {
         const loader = document.getElementById('loader');
@@ -295,203 +207,200 @@
         }
       }
 
+
+      fetchUsers();
+
+      const PAGE_SIZE = 5; // Number of records per page
+      let currentPage = 1; // Current page number
+      let userData = []; // Variable to store fetched user data
+      let filteredData = [];
+
+      const paginationContainer = document.getElementById('pagination');
+      const backButton = document.getElementById('backButton');
+      const nextButton = document.getElementById('nextButton');
+
       backButton.addEventListener('click', () => {
         if (currentPage > 1) {
           currentPage--;
           updatePagination();
-          displayApplications(currentPage);
+          displayUsers(currentPage);
         }
       });
 
       nextButton.addEventListener('click', () => {
-        const totalPages = Math.ceil(applicationData.length / PAGE_SIZE);
+        const totalPages = Math.ceil(userData.length / PAGE_SIZE);
         if (currentPage < totalPages) {
           currentPage++;
           updatePagination();
-          displayApplications(currentPage);
+          displayUsers(currentPage);
         }
       });
 
-      saveAndUpdateButton.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent form submission
 
-        const requiredFields = ['Pratica', 'Utente', 'UTENTE'];
-        let isValid = true;
-        let errorMessage = '';
 
-        // Check if all required fields are filled
-        requiredFields.forEach(field => {
-          const input = document.getElementById(field);
-          if (!input.value.trim()) {
-            isValid = false;
-            input.classList.remove('border-brand-gray-700');
-            input.classList.add('border-brand-red');
-          } else {
-            input.classList.add('border-brand-gray-700');
-            input.classList.remove('border-brand-red');
-          }
-        });
-
-        // Validate that a problem is selected
-        const selectedProblem = document.querySelector('input[name="problem"]:checked');
-        if (!selectedProblem) {
-          isValid = false;
-          errorMessage += 'Please select a problem to report.\n';
-        }
-
-        if (!isValid) {
-          alert(errorMessage || 'Please fill in all required fields.');
-          return;
-        }
-
-        const practice = document.getElementById('Pratica').value;
-        const user = document.getElementById('Utente').value;
-        const communicationText = document.getElementById('UTENTE').value;
-
-        const application = {
-          user: user,
-          date: new Date().toISOString(),
-          practice: practice,
-          state: selectedProblem ? selectedProblem.nextElementSibling.innerText : '',
-          communication_text: communicationText
-        };
+      // Function to fetch users from the endpoint and display them
+      function fetchUsers() {
         showLoader();
-        fetch(`${BASE_URL}/applications`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(application)
-        })
-          .then(response => {
-            if (response.ok) {
-              hideLoader();
-              console.log('Application created successfully');
-              currentPage = 1;
-              fetchApplications();
-              requiredFields.forEach(field => document.getElementById(field).value = '');
-              document.querySelectorAll('input[name="problem"]').forEach(radio => radio.checked = false);
-              document.getElementById('modalPopup').style.display = 'none';
-            } else {
-              alert('Server error');
-              hideLoader();
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            hideLoader();
-            alert('Server error');
-          });
-      });
-
-      function fetchApplications() {
-        showLoader();
-        fetch(`${BASE_URL}/applications`)
+        fetch(`${BASE_URL}/users`)
           .then(response => response.json())
           .then(data => {
-            applicationData = data.data;
-            filteredData = data.data;
+            const sortedData = data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            userData = sortedData;
+            filteredData = userData;
             updatePagination();
-            displayApplications(currentPage);
+            displayUsers(currentPage);
             hideLoader();
           })
           .catch(error => {
-            console.error('Error fetching applications:', error);
+            console.error('Error fetching users:', error);
           });
       }
 
-      function displayApplications(page) {
+      function displayUsers(page) {
         const startIndex = (page - 1) * PAGE_SIZE;
         const endIndex = startIndex + PAGE_SIZE;
-        const applicationsToShow = filteredData.slice(startIndex, endIndex);
+        const usersToShow = filteredData.slice(startIndex, endIndex);
+
+
+        function validateForm(formId) {
+          const form = document.getElementById(formId);
+          const inputs = form.querySelectorAll('input, select');
+          let isValid = true;
+
+          inputs.forEach(input => {
+            if (input.hasAttribute('required') && !input.value.trim()) {
+              input.classList.add('border-red-500'); // Add red border for invalid fields
+              isValid = false;
+            } else {
+              input.classList.remove('border-red-500'); // Remove red border for valid fields
+            }
+          });
+
+          return isValid;
+        }
+
 
         const table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
         table.innerHTML = '';
 
-        applicationsToShow.forEach(application => {
+        usersToShow.forEach((user, index) => {
           const newRow = table.insertRow();
+          let paymentStatusClass = 'bg-brand-red'; // Default to Red for Not Paid
+          let paymentStatusText = 'Not Paid';
+          if (user.payment_status === 'To Check') {
+            paymentStatusClass = 'bg-brand-yellow'; // Yellow for To Check
+            paymentStatusText = 'To Check';
+          } else if (user.payment_status === 'Paid') {
+            paymentStatusClass = 'bg-brand-green'; // Green for Paid
+            paymentStatusText = 'Paid';
+          }
           const cellClasses = 'first:pl-6 border-y p-2.5 border-brand-gray-700 first:border-l first:rounded-l-xl last:border-r last:rounded-r-xl';
 
           const cell1 = newRow.insertCell(0);
           cell1.className = cellClasses;
-          cell1.innerHTML = `<p class="text-sm px-1 text-white text-center py-1 w-[160px] bg-brand-green rounded">${new Date(application.date).toLocaleDateString()}</p>`;
+          cell1.innerHTML = user ? user?.n_practice : 'N/A';
 
           const cell2 = newRow.insertCell(1);
           cell2.className = cellClasses;
-          cell2.innerHTML = application.user;
+          cell2.innerHTML = `<p class="text-sm px-3 text-white text-center py-1 w-[145px] ${paymentStatusClass} rounded">
+                     ${user.name} ${user.surname}
+                   </p>`;
 
           const cell3 = newRow.insertCell(2);
           cell3.className = cellClasses;
-          cell3.innerHTML = application.practice;
+          cell3.innerHTML = user.date_of_birth ? new Date(user.date_of_birth).toLocaleDateString() : 'N/A';
 
           const cell4 = newRow.insertCell(3);
           cell4.className = cellClasses;
-          cell4.innerHTML = `<div class="flex gap-2 items-center">
-                             <div class="size-4 rounded-full bg-brand-green shrink-0"></div>
-                             <p class="text-black">${application.state}</p>
+          cell4.innerHTML = user ? new Date(user.created_on).toLocaleDateString() : 'N/A';
+
+          const cell5 = newRow.insertCell(4);
+          cell5.className = cellClasses;
+          cell5.innerHTML = user.address;
+
+          const cell6 = newRow.insertCell(5);
+          cell6.className = cellClasses;
+
+          cell6.innerHTML = `<div class="flex gap-7 items-center">
+                             <div class="flex gap-2 items-center">
+                               <div class="size-4 rounded-full ${paymentStatusClass} shrink-0"></div>
+                               <p class="text-black">${paymentStatusText}</p>
+                             </div>
+                           </div>`;
+
+          cell6.innerHTML = `<div class="flex gap-7 items-center">
+                             <div class="flex gap-2 items-center">
+                               <div class="size-4 rounded-full ${paymentStatusClass} shrink-0"></div>
+                               <p class="text-black">${paymentStatusText}</p>
+                             </div>
                            </div>`;
         });
+
       }
 
+
+
+      // Fetch the users when the page loads
       function updatePagination() {
-        paginationContainer.innerHTML = '';
+        paginationContainer.innerHTML = ''; // Clear previous pagination links
+
         const totalPages = Math.ceil(filteredData.length / PAGE_SIZE);
+
         for (let i = 1; i <= totalPages; i++) {
           const li = document.createElement('li');
           li.classList.add('group');
           if (i === currentPage) {
             li.classList.add('active');
           }
+
           const a = document.createElement('a');
           a.href = '#';
           a.classList.add('group-[.active]:underline', 'text-[15px]', 'text-primary');
           a.textContent = i;
           a.addEventListener('click', () => {
             currentPage = i;
-            displayApplications(currentPage);
+            displayUsers(currentPage)
             updatePagination();
           });
+
           li.appendChild(a);
           paginationContainer.appendChild(li);
         }
       }
-
-      function clearFormFields() {
-        document.getElementById('Pratica').value = '';
-        document.getElementById('Utente').value = '';
-        document.querySelectorAll('input[type="radio"]').forEach((radio) => {
-          radio.checked = false;
-        });
-      }
-
-      fetchApplications();
-      const dataInput = document.getElementById('DATA');
-      const utentePraticaInput = document.getElementById('UTENTE_PRATICA');
-      const statoPraticaInput = document.getElementById('STATO_PRATICA');
+      const SOGGETTOInput = document.getElementById('SOGGETTO');
+      const PAGAMENTIInput = document.getElementById('PAGAMENTI');
+      const nameInput = document.getElementById('ASSEGNAZIONE');
       const applicaButton = document.getElementById('applicaButton');
 
-      function filterTable() {
-        const dataText = dataInput.value.toUpperCase();
-        const utentePraticaText = utentePraticaInput.value.toUpperCase();
-        const statoPraticaText = statoPraticaInput.value.toUpperCase();
+      if (SOGGETTOInput && PAGAMENTIInput && nameInput && applicaButton) {
+        function filterTable() {
+          const soggettoText = SOGGETTOInput.value.toUpperCase();
+          const pagamentiText = PAGAMENTIInput.value; // Exact match for select dropdown
+          const assegnazioneText = nameInput.value.toUpperCase();
 
-        filteredData = applicationData.filter(application => {
-          const dataCell = application.date ? new Date(application.date).toLocaleDateString().toUpperCase() : '';
-          const utenteCell = application.user ? application.user.toUpperCase() : '';
-          const praticaCell = application.practice ? application.practice.toUpperCase() : '';
-          const statoCell = application.state ? application.state.toUpperCase() : '';
+          filteredData = userData.filter(user => {
+            const praticaText = user?.n_practice?.toUpperCase() || '';
+            const nomeText = `${user.name} ${user.surname}`.toUpperCase();
+            const soggettoTextAddress = user?.address?.toUpperCase() || '';
+            const pagamentiStatus = user?.payment_status || '';
 
-          return dataCell.includes(dataText) &&
-            (utenteCell.includes(utentePraticaText) || praticaCell.includes(utentePraticaText)) &&
-            statoCell.includes(statoPraticaText);
-        });
+            return (praticaText.includes(soggettoText) || nomeText.includes(soggettoText)) &&
+              (pagamentiText === '' || pagamentiStatus === pagamentiText) &&
+              soggettoTextAddress.includes(assegnazioneText);
+          });
 
-        currentPage = 1; // Reset to first page after filtering
-        updatePagination();
-        displayApplications(currentPage);
+          currentPage = 1; // Reset to first page after filtering
+          updatePagination();
+          displayUsers(currentPage);
+        }
+
+
+
+        applicaButton.addEventListener('click', filterTable);
+      } else {
+        console.error('One or more elements not found in the DOM.');
       }
 
-      applicaButton.addEventListener('click', filterTable);
     });
   </script>
 
@@ -507,7 +416,6 @@
 
     document.getElementById('datetime').innerText = formatDate();
   </script>
-
 </body>
 
 </html>
